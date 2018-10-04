@@ -1,10 +1,10 @@
 ---
-layout: home
+layout: page
 ---
 
 # DWIT - 013 Introduction to Python Programming
 
-Instructors: Sushil Awale and Suraj Prasai
+Instructors: Sushil Awale (<a href="https://github.com/awalesushil">@awalesushil</a>) and Suraj Prasai (<a href="https://github.com/spygaraud">@spygaraud</a>)
 
 # Course Description
 
