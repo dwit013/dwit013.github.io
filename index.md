@@ -26,18 +26,18 @@ The reference textbooks for the course are:
     <li> <b>How to Think Like a Computer Scientist: Learning with Python 3, 3rd Edition </b>
         by Peter Wentworth, Jeffrey Elkner, Allen B. Downey and Chris Meyers 
         <a href="https://media.readthedocs.org/pdf/howtothink/latest/howtothink.pdf">
-        https://media.readthedocs.org/pdf/howtothink/latest/howtothink.pdf
+        [Link]
         </a>
     </li>
     <li> <b>Automate the Boring Stuff with Python </b>by Al Sweigart
         <a href="http://automatetheboringstuff.com/">
-        http://automatetheboringstuff.com/)
+        [Link]
         </a>
     </li>
     <li>
         <b>How to think like a Computer Scientist</b> by Brad Miller and David Ranum
         <a href="http://interactivepython.org/runestone/static/thinkcspy/index.html">
-        http://interactivepython.org/runestone/static/thinkcspy/index.html
+        [Link]
         </a>
     </li>
 </ul>
