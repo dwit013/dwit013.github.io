@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 ---
 
 # DWIT - 013 Introduction to Python Programming

@@ -14,16 +14,17 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Introduction to Python Programming
-email: 
+email: sushil.awale@deerwalk.edu.np
 description: >- # this means to ignore newlines until "baseurl:"
-  Introductory Course on Python Programming
+  Introductory Course on Python Programming taught in DWIT in 2018
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://dwit013.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 
 github_username:  
 
 # Build settings
 markdown: kramdown
+permalink: pretty
 theme: minima
 plugins:
   - jekyll-feed
