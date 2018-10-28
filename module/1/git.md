@@ -34,33 +34,35 @@ Git stores all the configuration information in gitconfig file.
 
 Setup username and email address 
 
-<code>
-$ git config --global user.name "John Doe" <br>
+<pre>
+$ git config --global user.name "John Doe" 
 $ git config --global user.email johndoe@example.com
-</code>
+</pre>
 
 <code>-- global</code> option will set the information for the whole system. However, if you want to use a different account for a specific project you can setup the new account information when working in the project directory.
 
 For example, you have a project named 'personal_blog' and you want to use a different account when working on the project. You can follow the following commands.
 
-<code>cd personal_blog <br>
-<code>$ git config --local user.name "Jane Doe" <br>
-<code>$ git config --local user.email janedoe@example.com</code> <br>
+<pre>
+cd personal_blog
+$ git config --local user.name "Jane Doe"
+$ git config --local user.email janedoe@example.com
+</pre>
 
 Here <code> -- local </code> option is default. Hence, you can omit it. 
 
 # Checking your settings
 
-<code>
-$ git config --list <br>
-user.name=John Doe <br>
-user.email=johndoe@example.com <br>
-color.status=auto <br>
-color.branch=auto <br>
-color.interactive=auto <br>
-color.diff=auto <br>
+<pre>
+$ git config --list
+user.name=John Doe
+user.email=johndoe@example.com
+color.status=auto
+color.branch=auto
+color.interactive=auto
+color.diff=auto
 ...
-</code>
+</pre>
 
 # Initializing a Repository
 
