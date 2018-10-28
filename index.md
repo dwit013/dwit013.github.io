@@ -65,3 +65,5 @@ The reference textbooks for the course are:
         <td> 10% </td>
     </tr>
 </table>
+
+<a href="module/1/git" style="float:right;"> Next &raquo; </a>
