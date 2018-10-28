@@ -170,6 +170,89 @@ Date:   Sat Mar 15 10:31:28 2008 -0700
     first commit
 </pre>
 
+# Undoing things
+
+There are a few basic tools to undoing changes. However, you must be careful as you can't always undo things.
+
+You can redo a commit by using <code>git commit --amend</code> command. You can make additional changes you forgot, stage them, and commit again. 
+
+<pre>
+$ git commit -m 'initial commit'
+$ git add forgotten_file
+$ git commit --amend
+</pre>
+
+# Unstaging a staged file
+
+We can remove files from the staging area using <code> git reset HEAD < file > </code> command.
+
+<pre>
+$ git reset HEAD newfile.txt
+Unstaged changes after reset:
+M	CONTRIBUTING.md
+</pre>
+
+<pre>
+$ git status
+On branch master
+
+Changes not staged for commit:
+  (use "git add < file >..." to update what will be committed)
+  (use "git checkout -- < file >..." to discard changes in working directory)
+
+    modified:   newfile.txt
+</pre>
+
+# Unmodifying a Modified File
+
+If you don't want to keep the new changes and revert back to the file when you last commited, you can use the following command to do so. 
+
+<pre>
+$ git checkout -- newfile.txt
+$ git status
+On branch master
+nothing to commit, working tree clean
+</pre>
+
+# Working with remotes
+
+Remote repositories are versions of your project that are hosted on the Internet or network somewhere. To be able to collaborate on any Git project, you need to know how to manage your remote repositories. Collaborating with others involves managing these remote repositories and pushing and pulling data to and from them when you need to share work. 
+
+# Showing your remotes
+
+To see which remote servers you have configured, you can run the <code>git remote</code> command. 
+
+<pre>
+$ git clone https://github.com/dwit013/assignments.git
+Cloning into 'assignments'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+$ cd assignments
+$ git remote
+origin
+</pre>
+
+# Fetching and pulling from your remotes
+
+To get data from your remote projects, you can run:
+
+<code>$ git fetch < remote ></code>
+
+<code>git fetch </code> command only downloads the data to your local repository — it doesn’t automatically merge it with any of your work or modify what you’re currently working on. You have to merge it manually into your work when you’re ready.
+
+You can use the <code>git pull</code> command to automatically fetch and then merge that remote branch into your current branch.
+
+# Pushing to your remotes
+
+When you have your project at a point that you want to share, you have to push it upstream. The command for this is simple: <code>git push < remote > < branch ></code>
+
+<code>$ git push origin master</code>
+
+
+
 # Further Reading
 <a href="https://git-scm.com/book/en/v2" target="_blank"> Git Book </a>
 <hr>
