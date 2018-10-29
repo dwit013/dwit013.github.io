@@ -189,7 +189,7 @@ We can remove files from the staging area using <code> git reset HEAD < file > <
 <pre>
 $ git reset HEAD newfile.txt
 Unstaged changes after reset:
-M	CONTRIBUTING.md
+M	newfile.txt
 </pre>
 
 <pre>
