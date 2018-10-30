@@ -8,7 +8,7 @@ layout: page
 
 ## 2.2 Basic Datatypes
 
-# Numbers
+# Simple Python Code
 
 Enter <code> 1 + 1 </code> in the IDLE
 
@@ -32,7 +32,58 @@ Some examples:
 2.5
 </pre>
 
-The basic data types for numbers in Python are integer and float. 
+# Data types in Python
+
+Below is the list of important data types commonly used in Python.
+
+<ol>
+    <li> Booleans </li>
+    <li> Numbers </li>
+    <li> Strings </li>
+    <li> Bytes </li>
+    <li> Lists </li>
+    <li> Tuples </li>
+    <li> Sets </li>
+    <li> Dictionaries </li>
+</ol>
+
+# 1. Booleans
+
+A boolean has two values - True or False. These values are constants and can be used to assign or compare boolean values.
+
+<pre>
+>>> condition = True
+>>> if condition == True:
+...     print("The condition is true.")
+... else:
+...     print("The condition is false.)
+...
+The condition is true
+</pre>
+
+# 2. Numbers
+
+Numbers are one of the most prominent Python data types. The basic data types for numbers in Python are integer and float. Python also introduces complex as a new type of number.
+
+Key points:
+
+<ul>
+    <li> The numbers in Python can be <b>int, float or complex</b>.</li>
+    <li> Python has a built-in function <code>type()</code> to determine the data type of a variable or a value.
+    </li>
+    <li> In Python, you can add a <b>"j"</b> or <b>"J"</b> after a number to make it imaginary or complex. </li>
+</ul>
+
+<pre>
+>>> num = 2
+>>> print(type(num))
+>>> num = 3.0
+>>> print(type(num))
+>>> num = 3+5j
+>>> print(type(num))
+</pre>
+
+# Some operations on numbers
 
 With Python, you can also use the <code>**</code> operator to calculate powers.
 
@@ -52,7 +103,7 @@ The equal sign (=) is used to assign a value to a variable.
 50
 </pre>
 
-There are plenty of other operators you can use in Python expressions, too. The following table lists all the math operators in Python from highest to lowest precedence.
+There are plenty of other operators you can use in Python expressions. The following table lists all the math operators in Python from highest to lowest precedence.
 
 <table>
     <thead>
@@ -97,7 +148,7 @@ There are plenty of other operators you can use in Python expressions, too. The 
     </tr>
 </table>
 
-# Strings
+# 3. Strings
 
 Besides operating on numbers, you can also manipulate strings. Strings can be enclosed in single quotes <code>('...')</code> or double quotes <code>("...")</code>
 
@@ -112,7 +163,7 @@ Besides operating on numbers, you can also manipulate strings. Strings can be en
 "Don't do that."
 </pre>
 
-You can use raw strings by adding an <code>r</code> before the first quote if you don’t want characters prefaced by <code>\</code> to be interpreted as special characters
+You can use raw strings by adding an <code>r</code> before the first quote if you don’t want characters prefaced by <code>\</code> to be interpreted as special characters.
 
 <pre>
 >>> print('C:\some\name') 
@@ -160,6 +211,53 @@ You can break long strings using this feature.
             'It has two sentences.')
 >>> text
 This is a multiple line text. It has two sentences.
+</pre>
+
+# Indexing in strings
+
+Strings can be indexed with the first character having index 0. There is no separate character type; a character is simply a string of size one.
+
+<pre>
+>>> word = 'Apple'
+>>> word[0]
+'A'
+>> word[4]
+'e'
+</pre>
+
+Indices may also have negative numbers.
+
+<pre>
+>>> word[-1]
+'e'
+>>> word[-3]
+'p'
+</pre>
+
+Note that since -0 is the same as 0, negative indices start from -1.
+
+In addition to indexing, slicing is also supported. While indexing is used to obtain individual characters, slicing allows you to obtain substring.
+
+<pre>
+>>> word[0:2]
+'Ap'
+>>> word[2:4]
+'ple'
+</pre>
+
+Note that start is always included, and the end always excluded.
+
+Slice indices have useful defaults.
+<ul> 
+    <li> An omitted first index defaults to zero </li> 
+    <li> An omitted second index defaults to the size of the string being sliced. </li>
+</ul>
+
+<pre>
+>>> word[:2]
+'Ap'
+>>> word[3:]
+'le'
 </pre>
 
 <hr>
