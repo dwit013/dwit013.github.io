@@ -73,7 +73,7 @@ Your pull request shall appear in the Pull Request tab of the original repositor
 <a href="https://medium.freecodecamp.org/how-to-use-git-efficiently-54320a236369">How to use git efficiently</a>
 <hr>
 <a href="../git-basics" style="float:left;"> &laquo; Prev </a>
-<a href="../../../module/2/git-basics" style="float:right;"> Next &raquo; </a>
+<a href="../../../module/2/python" style="float:right;"> Next &raquo; </a>
 
 
 

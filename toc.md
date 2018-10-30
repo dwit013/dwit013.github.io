@@ -14,3 +14,11 @@ layout: page
         <li> 1.3 <a href="../module/1/github"> GitHub </a></li>
     </ul>
 </li>
+
+<li>
+    Module 2 
+    <ul type='none'>
+        <li> 2.1 <a href="../module/2/python"> Introduction to Python </a></li>
+        <li> 2.2 <a href="../module/2/basic-datatypes"> Basic Datatypes </a></li>
+    </ul>
+</li>
