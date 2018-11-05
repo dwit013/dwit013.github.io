@@ -22,3 +22,11 @@ layout: page
         <li> 2.2 <a href="../module/2/basic-datatypes"> Basic Datatypes </a></li>
     </ul>
 </li>
+
+<li>
+    Module 3 
+    <ul type='none'>
+        <li> 3.1 <a href="../module/3/list"> List </a></li>
+        <li> 3.2 <a href="../module/3/tuples"> Tuples </a></li>
+    </ul>
+</li>
