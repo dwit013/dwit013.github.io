@@ -260,6 +260,27 @@ Slice indices have useful defaults.
 'le'
 </pre>
 
+# Bytes
+
+The byte is an immutable type in Python. It can store a sequence of bytes (each 8-bits) ranging from 0 to 255. Similar to an array, we can fetch the value of a single byte by using the index. But we can not modify the value.
+
+Here are a few differences between a byte and the string.
+
+<ul>
+    <li>Byte objects contain a sequence of bytes whereas the strings store sequence of characters.</li>
+    <li>The bytes are machine-readable objects whereas the strings are just in human-readable form.</li>
+    <li>Since the byte is machine-readable, so they can be directly stored to the disk. Whereas, the strings   first need to encoded before getting on to the disk.</li>
+</ul>
+
+<pre>
+>>> # Make an empty bytes object (8-bit bytes)
+>>> empty_object = bytes(16)
+>>> print(type(empty_object))
+< class 'bytes' >
+>>> print(empty_object)
+b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+</pre>
+
 <hr>
 <a href="../python" style="float:left;"> &laquo; Prev </a>
-<a href="../" style="float:right;"> Next &raquo; </a>
+<a href="../../../module/3/list" style="float:right;"> Next &raquo; </a>
