@@ -419,7 +419,7 @@ True
 Operators and Built-in Functions
 --------------------------------
 
-You have already become familiar with many of the operators and built-in functions that can be used with [strings](https://realpython.com/python-strings), [lists](https://realpython.com/python-lists-tuples/#python-lists), and [tuples](https://realpython.com/python-lists-tuples/#python-tuples). Some of these work with dictionaries as well.
+You have already become familiar with many of the operators and built-in functions that can be used with strings, tuples, list. Some of these work with dictionaries as well.
 
 For example, the `in` and `not in` operators return `True` or `False` according to whether the specified operand occurs as a key in the dictionary:
 
