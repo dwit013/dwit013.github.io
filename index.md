@@ -66,4 +66,16 @@ The reference textbooks for the course are:
     </tr>
 </table>
 
+# Important Course Links
+
+<h4>
+<a href="toc"> Table of Contents </a>
+</h4>
+
+<h4>
+<a href="assignments"> Assignments </a>
+</h4>
+
+<hr>
+
 <a href="module/1/git" style="float:right;"> Next &raquo; </a>
