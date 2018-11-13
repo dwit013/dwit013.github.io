@@ -269,4 +269,4 @@ technological achievement. It will never get better than this.
 
 <hr>
 <a href="../list" style="float:left;"> &laquo; Prev </a>
-<a href="/" style="float:right;"> Next &raquo; </a>
+<a href="../dictionary" style="float:right;"> Next &raquo; </a>

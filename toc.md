@@ -28,5 +28,6 @@ layout: page
     <ul type='none'>
         <li> 3.1 <a href="../module/3/list"> List </a></li>
         <li> 3.2 <a href="../module/3/tuples"> Tuples </a></li>
+        <li> 3.3 <a href="../module/3/dictionary"> Dictionary </a></li>
     </ul>
 </li>
