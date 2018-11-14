@@ -7,7 +7,7 @@ layout: page
 <ol>
 
 <li>
-    Module 1 
+    Module 1 - Git and GitHub
     <ul type='none'>
         <li> 1.1 <a href="../module/1/git"> Introdcution to Git </a></li>
         <li> 1.2 <a href="../module/1/git-basics"> Git Basics </a></li>
@@ -16,7 +16,7 @@ layout: page
 </li>
 
 <li>
-    Module 2 
+    Module 2 - Python Basics
     <ul type='none'>
         <li> 2.1 <a href="../module/2/python"> Introduction to Python </a></li>
         <li> 2.2 <a href="../module/2/basic-datatypes"> Basic Datatypes </a></li>
@@ -24,7 +24,7 @@ layout: page
 </li>
 
 <li>
-    Module 3 
+    Module 3 - Advanced Datatypes
     <ul type='none'>
         <li> 3.1 <a href="../module/3/list"> List </a></li>
         <li> 3.2 <a href="../module/3/tuples"> Tuples </a></li>
@@ -33,10 +33,10 @@ layout: page
 </li>
 
 <li>
-    Module 4 
+    Module 4 - Control Statements
     <ul type='none'>
-        <li> 4.1 <a href="../module/4/conditional-statement"> List </a></li>
-        <li> 4.2 <a href="../module/4/while-statement"> Tuples </a></li>
-        <li> 4.3 <a href="../module/4/for-loop-statement"> Dictionary </a></li>
+        <li> 4.1 <a href="../module/4/conditional-statement"> Conditional Statement </a></li>
+        <li> 4.2 <a href="../module/4/while-statement"> While Statement </a></li>
+        <li> 4.3 <a href="../module/4/for-loop-statement"> For Loop Statement </a></li>
     </ul>
 </li>
