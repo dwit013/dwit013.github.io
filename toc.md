@@ -31,3 +31,12 @@ layout: page
         <li> 3.3 <a href="../module/3/dictionary"> Dictionary </a></li>
     </ul>
 </li>
+
+<li>
+    Module 4 
+    <ul type='none'>
+        <li> 4.1 <a href="../module/4/conditional-statement"> List </a></li>
+        <li> 4.2 <a href="../module/4/while-statement"> Tuples </a></li>
+        <li> 4.3 <a href="../module/4/for-loop-statement"> Dictionary </a></li>
+    </ul>
+</li>

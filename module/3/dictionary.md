@@ -116,13 +116,13 @@ If you refer to a key that is not in the dictionary, Python raises an exception:
 Adding an entry to an existing dictionary is simply assigning a new key and value:
 
     >>> country_capital['Sri Lanka'] = 'Colombia'
-    >>> MLB\_team
+    >>> country_capital
     {'Nepal': 'Kathmandu', 'India': 'New Delhi', 'China': 'Beijing',
     'Bhutan': 'Thimpu', 'Bangladesh': 'Dhaka', 'Sri Lanka': 'Colombia'}
 
 You can update an entry by just assigning a new value to an existing key:
 
-    >>> country_capital['Sri Lanka'] \= 'Colombo'
+    >>> country_capital['Sri Lanka'] = 'Colombo'
     >>> country_capital
     {'Nepal': 'Kathmandu', 'India': 'New Delhi', 'China': 'Beijing',
     'Bhutan': 'Thimpu', 'Bangladesh': 'Dhaka', 'Sri Lanka': 'Colombo'}
@@ -524,4 +524,4 @@ Or the values to merge can be specified as a list of keyword arguments:
 
 <hr>
 <a href="../tuples" style="float:left;"> &laquo; Prev </a>
-<a href="/" style="float:right;"> Next &raquo; </a>
+<a href="../../../module/4/conditional-statement" style="float:right;"> Next &raquo; </a>
