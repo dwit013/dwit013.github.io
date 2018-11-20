@@ -40,3 +40,12 @@ layout: page
         <li> 4.3 <a href="../module/4/for-loop-statement"> For Loop Statement </a></li>
     </ul>
 </li>
+
+<li>
+    Module 5 - Functions
+    <ul type='none'>
+        <li> 5.1 <a href="../module/5/built-in-functions"> Built-in Functions </a></li>
+        <li> 5.2 <a href="../module/5/user-defined-functions"> User-defined Functions </a></li>
+        <li> 5.3 <a href="../module/5/anonymous-function"> Anonymous Function </a></li>
+    </ul>
+</li>
