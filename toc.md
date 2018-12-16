@@ -49,3 +49,12 @@ layout: page
         <li> 5.3 <a href="../module/5/anonymous-function"> Anonymous Function </a></li>
     </ul>
 </li>
+
+<li>
+    Module 6 - Modules
+    <ul type='none'>
+        <li> 6.1 <a href="../module/6/modules"> Modules </a></li>
+        <li> 6.2 <a href="../module/6/packages"> Packages </a></li>
+        <li> 6.3 <a href="../module/6/virtual-environment"> Virtual Environment </a></li>
+    </ul>
+</li>
