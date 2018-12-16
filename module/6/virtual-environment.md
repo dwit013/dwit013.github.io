@@ -45,9 +45,93 @@ If you are using Python 3.6 or later, virtualenv tool comes built in. Otherwise 
 
 # Create a virtual environment
 
-    virtualenv
+    python3 -m venv virtual_environment_name
 
+Or
 
+    python3 -m virtualenv virtual_environment_name
+
+Here, virtual_environment_name can be any arbitrary string.
+
+Example
+
+    python3 -m venv env
+
+It creates a directory named **env** that contains a directory structre as follows.
+
+    ├── bin
+    │   ├── activate
+    │   ├── activate.csh
+    │   ├── activate.fish
+    │   ├── easy_install
+    │   ├── easy_install-3.6
+    │   ├── pip
+    │   ├── pip3
+    │   ├── pip3.6
+    │   ├── python -> python3.6
+    │   ├── python3 -> python3.6
+    ├── include
+    ├── lib
+    │   └── python3.6
+    │       └── site-packages
+    └── pyvenv.cfg
+
+# Activating virtual envionment
+
+On Windows run:
+
+    env\Scripts\activate.bat
+
+On Unix or MacOS run:
+
+    source env/bin/activate
+
+If the above action was successful, you should see the name of the virtual environment in your command line.
+
+    (env) $
+
+Also try the following command:
+
+    which python
+
+It shows the current Python file that is being used (It should be inside the virtual environment folder that we just created.)
+
+    /home/usr/my_project/env/bin/python
+
+# Install a third-party module
+
+    pip install requests
+
+The new module will be downloaded to the `env/lib/python3.6/site-packages` folder.
+
+# Deactivating virtual environment
+
+    deactivate
+
+# Freezing dependencies and Source Control
+
+You can create a file that lists all the dependencies used in the project. You can then share this file so that others can install the dependencies.
+
+    pip freeze > requirments.txt
+
+Now we have a requirements.txt file with the following list.
+
+    certifi==2018.11.29
+    chardet==3.0.4
+    idna==2.8
+    requests==2.21.0
+    urllib3==1.24.1
+
+To install from the requirements field, the following command can be used:
+
+    pip install -r requirements.txt
+
+# Using different versions of Python
+
+You can also use a different version of Python other than your default one using virtual environment.
+
+    python3 -m virtualenv env --python=python2.7
+    
 <hr>
 <a href="../modules" style="float:left;"> &laquo; Prev </a>
 <a href="../virtual-environment" style="float:right;"> Next &raquo; </a>
