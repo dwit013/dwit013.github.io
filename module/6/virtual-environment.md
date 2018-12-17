@@ -133,5 +133,5 @@ You can also use a different version of Python other than your default one using
     python3 -m virtualenv env --python=python2.7
     
 <hr>
-<a href="../modules" style="float:left;"> &laquo; Prev </a>
-<a href="../virtual-environment" style="float:right;"> Next &raquo; </a>
+<a href="../packages" style="float:left;"> &laquo; Prev </a>
+<a href="../../../module/7/regular-expressions" style="float:right;"> Next &raquo; </a>
