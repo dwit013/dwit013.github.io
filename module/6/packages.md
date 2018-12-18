@@ -56,9 +56,9 @@ PIP is a package manager for Python modules/packages. For Python 3.4 or later, P
 
     pip --version
 
-# Installing Python
+# Installing Pip
 
-You can download and install pip. More details on [Link]('https://pip.pypa.io/en/stable/installing/')
+You can download and install pip. More details on [Link](https://pip.pypa.io/en/stable/installing/)
 
 # Downloading and installing a package
 
