@@ -58,3 +58,12 @@ layout: page
         <li> 6.3 <a href="../module/6/virtual-environment"> Virtual Environment </a></li>
     </ul>
 </li>
+
+<li>
+    Module 7 - File Handling
+    <ul type='none'>
+        <li> 7.1 <a href="../module/7/regular-expressions"> Regular Expressions </a></li>
+        <li> 7.2 <a href="../module/7/file-handling-basic"> File Handling Basic </a></li>
+        <li> 7.3 <a href="../module/7/file-handling-advanced"> File Handling Advanced </a></li>
+    </ul>
+</li>
