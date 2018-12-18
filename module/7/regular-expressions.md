@@ -156,5 +156,5 @@ The re.search function returns a match object on success, **None** on failure.
 * [Regular Expressions Info](https://www.regular-expressions.info/)
 
 <hr>
-<a href="../../../module/5/anonymous-function" style="float:left;"> &laquo; Prev </a>
-<a href="../packages" style="float:right;"> Next &raquo; </a>
+<a href="../../../module/6/virtual-environment" style="float:left;"> &laquo; Prev </a>
+<a href="../file-handling-basic" style="float:right;"> Next &raquo; </a>
