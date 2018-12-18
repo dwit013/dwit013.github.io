@@ -192,7 +192,7 @@ You can rename or delete file using Python's **os module**.
 
 ## Rename method
 
-The rename method renames a file.
+The rename() method renames a file.
 
 Syntax
 
@@ -201,7 +201,7 @@ Syntax
 
 ## Remove method
 
-The remove method deletes a file.
+The remove() method deletes a file.
 
 Syntax
 
