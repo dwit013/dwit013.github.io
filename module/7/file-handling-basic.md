@@ -12,7 +12,7 @@ layout: page
 
 Python provides basic functions and methods to manipulate files. Most of the manipulation is based on the **file** object.
 
-## Open Function
+# Open Function
 
 The open function is used to open a file. It returns a **file** object.
 
@@ -31,7 +31,7 @@ You can also open a file using **with** keyword.
 
 It is good practice to use the with keyword when dealing with file objects. The advantage is that the file is properly closed after its suite finishes, even if an exception is raised at some point.
 
-## Access modes
+# Access modes
 
 <table>
     <thead>
@@ -90,7 +90,7 @@ It is good practice to use the with keyword when dealing with file objects. The 
     </tbody>
 </table>
 
-## Close method
+# Close method
 
 The file object has a close method which flushes any unwritten information and closes the file object.
 After the file is closed, no more writing can be done.
@@ -104,7 +104,7 @@ Example
     file = open('some_file.txt', r)
     file.close()
 
-## Write method
+# Write method
 
 The write() method writes some string to an open file. It doesn't add a new line character to the end of the string.
 
@@ -118,7 +118,7 @@ Example
     file.write('File handling is so easy in Python.')
     file.close()
 
-## Read method
+# Read method
 
 The read() method reads a string from an open file.
 
@@ -145,7 +145,7 @@ Example
         str = f.read()
     print(str)
 
-## Readline method
+# Readline method
 
 The readline() method reads a single line from the file and a newline character `\n` is left at the end of the string. It is only omitted on the last line of the file if the file doesn’t end in a newline. 
 
@@ -168,7 +168,7 @@ Example
     for line in f:
         print (line, end =' ')
 
-## File Positions
+# File Positions
 
 The tell() method returns an integer value giving the current position within the file. 
 
@@ -190,7 +190,7 @@ If `from = 0` then it means the beginning of the file, if `from = 1` then it mea
 
 You can rename or delete file using Python's **os module**.
 
-## Rename method
+# Rename method
 
 The rename() method renames a file.
 
@@ -199,7 +199,7 @@ Syntax
     import os
     os.rename('old_file_name.txt','new_file_name.txt')
 
-## Remove method
+# Remove method
 
 The remove() method deletes a file.
 
@@ -208,6 +208,62 @@ Syntax
     import os
     os.remove('some_file.txt')
 
+## Python Object Serialization
+
+Serialization is the process whereby a Python object hierarchy is converted into a byte stream, and desialization is the inverse operation, whereby a byte stream (from a binary file or bytes-like object) is converted back into an object hierarchy.
+
+Serialization is also known as pickling (and unpickling).
+
+The **pickle** module implements binary protocols for serializing and de-serializing a Python object structure.
+
+    import pickle
+
+The **pickle** module provides the following functions:
+
+# Dump Function
+
+The **dump()** function writes a pickled representation of object to the open file object file.
+
+Syntax
+
+    pickle.dump(obj, file)
+
+Example
+
+    import pickle
+    
+    list = ['foo','bar']
+    file = open('my_list.p', wb)
+
+    pickle.dump(list, file)
+
+    file.close()
+
+# Load Function
+
+The **load()** function reads a pickled object representation from the open file object file and return the reconstituted object hierarchy specified therein.
+
+Syntax
+
+    pickle.load(file)
+
+Example
+
+    import pickle
+
+    file = open('my_list.p', wb)
+
+    list = pickle.load(file)
+
+The following types can be pickled:
+
+* None, True, and False
+* integers, floating point numbers, complex numbers
+* strings, bytes, bytearrays
+* tuples, lists, sets, and dictionaries containing only picklable objects
+* functions defined at the top level of a module
+* built-in functions defined at the top level of a module 
+* classes that are defined at the top level of a module
 
 <hr>
 <a href="../regular-expressions" style="float:left;"> &laquo; Prev </a>
