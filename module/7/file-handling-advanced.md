@@ -26,7 +26,8 @@ The CSV module has several functions and classes available for reading and writi
 ## Module Contents
 The csv module defines the following functions:
 
-##csv.reader
+### csv.reader
+
 Syntax:
 
 	csv.reader(csvfile, dialect='excel', **fmtparams)
@@ -45,7 +46,8 @@ A short usage example:
 	Spam, Spam, Spam, Spam, Spam, Baked Beans
 	Spam, Lovely Spam, Wonderful Spam
 
-##csv.writer
+### csv.writer
+
 Syntax:
 
 	csv.writer(csvfile, dialect='excel', **fmtparams)
