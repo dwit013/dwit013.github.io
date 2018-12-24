@@ -16,8 +16,6 @@ A CSV (comma separated values) file allows data to be saved in a tabular structu
 The CSV format is the most commonly used import and export format for databases and spreadsheets. This tutorial will give a detailed introduction to CSV’s and the modules and classes available for reading and writing data to CSV files. It will also cover a working example to show you how to read and write data to a CSV file in Python.
 
 ## Reader and Writer Modules
-
-
 The CSV module has several functions and classes available for reading and writing CSVs, and they include:
 
 * csv.reader function
@@ -25,12 +23,12 @@ The CSV module has several functions and classes available for reading and writi
 * csv.Dictwriter class
 * csv.DictReader class
 
-## csv.reader
+**csv.reader**
 The csv.reader module takes the following parameters:
 
-csvfile: This is usually an object which supports the iterator protocol and usually returns a string each time its __next__() method is called.
-dialect='excel': An optional parameter used to define a set of parameters specific to a particular CSV dialect.
-fmtparams: An optional parameter that can be used to override existing formatting parameters.
+* csvfile: This is usually an object which supports the iterator protocol and usually returns a string each time its __next__() method is called.
+* dialect='excel': An optional parameter used to define a set of parameters specific to a particular CSV dialect.
+* fmtparams: An optional parameter that can be used to override existing formatting parameters.
 Here is an example of how to use the csv.reader module.
 
 	import csv
@@ -40,11 +38,11 @@ Here is an example of how to use the csv.reader module.
 	    for row in reader:
 		print(row)
 
-## csv.writer module
+**csv.writer module**
 This module is similar to the csv.reader module and is used to write data to a CSV. It takes three parameters:
 
-csvfile: This can be any object with a write() method.
-dialect='excel': An optional parameter used to define a set of parameters specific to a particular CSV.
-fmtparam: An optional parameter that can be used to override existing formatting parameters.
+* csvfile: This can be any object with a write() method.
+* dialect='excel': An optional parameter used to define a set of parameters specific to a particular CSV.
+* fmtparam: An optional parameter that can be used to override existing formatting parameters.
 
 
