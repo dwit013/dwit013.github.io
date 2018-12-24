@@ -1,6 +1,8 @@
+---
+layout: page
+---
 
-What Is a CSV File?
--------------------
+## What Is a CSV File?
 
 A CSV (comma separated values) file allows data to be saved in a tabular structure with a .csv extension. CSV files have been used extensively in e-commerce applications because they are considered very easy to process. Some of the areas where they have been used include:
 
@@ -9,12 +11,12 @@ A CSV (comma separated values) file allows data to be saved in a tabular structu
 * exporting orders
 * exporting e-commerce analytic reports
 
-### Where Do CSV Files Come From?
+## Where Do CSV Files Come From?
 
 The CSV format is the most commonly used import and export format for databases and spreadsheets. This tutorial will give a detailed introduction to CSV’s and the modules and classes available for reading and writing data to CSV files. It will also cover a working example to show you how to read and write data to a CSV file in Python.
 
-Reader and Writer Modules
-----------------------------------------------------
+## Reader and Writer Modules
+
 
 The CSV module has several functions and classes available for reading and writing CSVs, and they include:
 
@@ -23,7 +25,7 @@ The CSV module has several functions and classes available for reading and writi
 * csv.Dictwriter class
 * csv.DictReader class
 
-csv.reader
+## csv.reader
 The csv.reader module takes the following parameters:
 
 csvfile: This is usually an object which supports the iterator protocol and usually returns a string each time its __next__() method is called.
@@ -38,7 +40,7 @@ Here is an example of how to use the csv.reader module.
 	    for row in reader:
 		print(row)
 
-csv.writer module
+## csv.writer module
 This module is similar to the csv.reader module and is used to write data to a CSV. It takes three parameters:
 
 csvfile: This can be any object with a write() method.
