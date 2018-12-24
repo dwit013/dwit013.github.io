@@ -26,9 +26,10 @@ The CSV module has several functions and classes available for reading and writi
 ## Module Contents
 The csv module defines the following functions:
 
-Syntax
+###csv.reader
+Syntax:
 
-	**csv.reader(csvfile, dialect='excel', **fmtparams)**
+	csv.reader(csvfile, dialect='excel', **fmtparams)
 
 * Return a reader object which will iterate over lines in the given csvfile. csvfile can be any object which supports the iterator protocol and returns a string each time its __next__() method is called — file objects and list objects are both suitable. If csvfile is a file object, it should be opened with **newline=''**. 
 * An optional dialect parameter can be given which is used to define a set of parameters specific to a particular CSV dialect.
@@ -44,24 +45,10 @@ A short usage example:
 	Spam, Spam, Spam, Spam, Spam, Baked Beans
 	Spam, Lovely Spam, Wonderful Spam
 
-**csv.reader**
-The csv.reader module takes the following parameters:
+###csv.writer
+Syntax:
 
-* csvfile: This is usually an object which supports the iterator protocol and usually returns a string each time its __next__() method is called.
-* dialect='excel': An optional parameter used to define a set of parameters specific to a particular CSV dialect.
-* fmtparams: An optional parameter that can be used to override existing formatting parameters.
-Here is an example of how to use the csv.reader module.
-
-	import csv
-
-	with open('example.csv', newline='') as File:
-	    reader = csv.reader(File)
-	    for row in reader:
-		print(row)
-
-Syntax
-
-	**csv.writer(csvfile, dialect='excel', **fmtparams)**
+	csv.writer(csvfile, dialect='excel', **fmtparams)
 
 * Return a writer object responsible for converting the user’s data into delimited strings on the given file-like object. csvfile can be any object with a write() method. If csvfile is a file object, it should be opened with newline=''.
 * An optional dialect parameter can be given which is used to define a set of parameters specific to a particular CSV dialect.
@@ -73,11 +60,6 @@ Syntax
 		                    quotechar='|', quoting=csv.QUOTE_MINIMAL)
 	    spamwriter.writerow(['Spam'] * 5 + ['Baked Beans'])
 	    spamwriter.writerow(['Spam', 'Lovely Spam', 'Wonderful Spam'])
-**csv.writer module**
-This module is similar to the csv.reader module and is used to write data to a CSV. It takes three parameters:
 
-* csvfile: This can be any object with a write() method.
-* dialect='excel': An optional parameter used to define a set of parameters specific to a particular CSV.
-* fmtparam: An optional parameter that can be used to override existing formatting parameters.
 
 
