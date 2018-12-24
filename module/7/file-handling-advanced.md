@@ -75,16 +75,16 @@ Here’s the code to read it in as a dictionary this time:
 
 import csv
 
-with open('employee\_birthday.txt', mode\='r') as csv\_file:
-    csv\_reader \= csv.DictReader(csv\_file)
-    line\_count \= 0
-    for row in csv\_reader:
-        if line\_count \== 0:
-            print(f'Column names are {", ".join(row)}')
-            line\_count += 1
-        print(f'\\t{row\["name"\]} works in the {row\["department"\]} department, and was born in {row\["birthday month"\]}.')
-        line\_count += 1
-    print(f'Processed {line\_count} lines.')
+	with open('employee\_birthday.txt', mode\='r') as csv\_file:
+	    csv\_reader \= csv.DictReader(csv\_file)
+	    line\_count \= 0
+	    for row in csv\_reader:
+		if line\_count \== 0:
+		    print(f'Column names are {", ".join(row)}')
+		    line\_count += 1
+		print(f'\\t{row\["name"\]} works in the {row\["department"\]} department, and was born in {row\["birthday month"\]}.')
+		line\_count += 1
+	    print(f'Processed {line\_count} lines.')
 
 This results in the same output as before:
 
@@ -156,13 +156,13 @@ Since you can read our data into a dictionary, it’s only fair that you should 
 
 import csv
 
-with open('employee\_file2.csv', mode\='w') as csv\_file:
-    fieldnames \= \['emp\_name', 'dept', 'birth\_month'\]
-    writer \= csv.DictWriter(csv\_file, fieldnames\=fieldnames)
+	with open('employee\_file2.csv', mode\='w') as csv\_file:
+	    fieldnames \= \['emp\_name', 'dept', 'birth\_month'\]
+	    writer \= csv.DictWriter(csv\_file, fieldnames\=fieldnames)
 
-    writer.writeheader()
-    writer.writerow({'emp\_name': 'John Smith', 'dept': 'Accounting', 'birth\_month': 'November'})
-    writer.writerow({'emp\_name': 'Erica Meyers', 'dept': 'IT', 'birth\_month': 'March'})
+	    writer.writeheader()
+	    writer.writerow({'emp\_name': 'John Smith', 'dept': 'Accounting', 'birth\_month': 'November'})
+	    writer.writerow({'emp\_name': 'Erica Meyers', 'dept': 'IT', 'birth\_month': 'March'})
 
 Unlike `DictReader`, the `fieldnames` parameter is required when writing a dictionary. This makes sense, when you think about it: without a list of `fieldnames`, the `DictWriter` can’t know which keys to use to retrieve values from your dictionaries. It also uses the keys in `fieldnames` to write out the first row as column names.
 
