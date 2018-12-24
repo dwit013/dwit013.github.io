@@ -23,6 +23,27 @@ The CSV module has several functions and classes available for reading and writi
 * csv.Dictwriter class
 * csv.DictReader class
 
+## Module Contents
+The csv module defines the following functions:
+
+Syntax
+
+	**csv.reader(csvfile, dialect='excel', **fmtparams)**
+
+* Return a reader object which will iterate over lines in the given csvfile. csvfile can be any object which supports the iterator protocol and returns a string each time its __next__() method is called — file objects and list objects are both suitable. If csvfile is a file object, it should be opened with **newline=''**. 
+* An optional dialect parameter can be given which is used to define a set of parameters specific to a particular CSV dialect.
+* The other optional fmtparams keyword arguments can be given to override individual formatting parameters in the current dialect.
+
+A short usage example:
+
+	>>> import csv
+	>>> with open('eggs.csv', newline='') as csvfile:
+	...     spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
+	...     for row in spamreader:
+	...         print(', '.join(row))
+	Spam, Spam, Spam, Spam, Spam, Baked Beans
+	Spam, Lovely Spam, Wonderful Spam
+
 **csv.reader**
 The csv.reader module takes the following parameters:
 
@@ -32,12 +53,26 @@ The csv.reader module takes the following parameters:
 Here is an example of how to use the csv.reader module.
 
 	import csv
- 
+
 	with open('example.csv', newline='') as File:
 	    reader = csv.reader(File)
 	    for row in reader:
 		print(row)
 
+Syntax
+
+	**csv.writer(csvfile, dialect='excel', **fmtparams)**
+
+* Return a writer object responsible for converting the user’s data into delimited strings on the given file-like object. csvfile can be any object with a write() method. If csvfile is a file object, it should be opened with newline=''.
+* An optional dialect parameter can be given which is used to define a set of parameters specific to a particular CSV dialect.
+* The other optional fmtparams keyword arguments can be given to override individual formatting parameters in the current dialect.
+
+	import csv
+	with open('eggs.csv', 'w', newline='') as csvfile:
+	    spamwriter = csv.writer(csvfile, delimiter=' ',
+		                    quotechar='|', quoting=csv.QUOTE_MINIMAL)
+	    spamwriter.writerow(['Spam'] * 5 + ['Baked Beans'])
+	    spamwriter.writerow(['Spam', 'Lovely Spam', 'Wonderful Spam'])
 **csv.writer module**
 This module is similar to the csv.reader module and is used to write data to a CSV. It takes three parameters:
 
