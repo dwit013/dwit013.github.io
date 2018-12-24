@@ -54,12 +54,16 @@ Syntax:
 * An optional dialect parameter can be given which is used to define a set of parameters specific to a particular CSV dialect.
 * The other optional fmtparams keyword arguments can be given to override individual formatting parameters in the current dialect.
 
-	import csv
-	with open('eggs.csv', 'w', newline='') as csvfile:
-	    spamwriter = csv.writer(csvfile, delimiter=' ',
-		                    quotechar='|', quoting=csv.QUOTE_MINIMAL)
-	    spamwriter.writerow(['Spam'] * 5 + ['Baked Beans'])
-	    spamwriter.writerow(['Spam', 'Lovely Spam', 'Wonderful Spam'])
+A short usage example:
+
+	>>> import csv
+	>>> with open('eggs.csv', 'w', newline='') as csvfile:
+	...    spamwriter = csv.writer(csvfile, delimiter=' ',
+	...	                    quotechar='|', quoting=csv.QUOTE_MINIMAL)
+	...    spamwriter.writerow(['Spam'] * 5 + ['Baked Beans'])
+	...    spamwriter.writerow(['Spam', 'Lovely Spam', 'Wonderful Spam'])
 
 
+
+	
 
