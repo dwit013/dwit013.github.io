@@ -1,54 +1,4 @@
-   Object-Oriented Programming (OOP) in Python 3 – Real Python                     (function(i,s,o,g,r,a,m){i\['GoogleAnalyticsObject'\]=r;i\[r\]=i\[r\]||function(){ (i\[r\].q=i\[r\].q||\[\]).push(arguments)},i\[r\].l=1\*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)\[0\];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-35184939-1', 'auto', {'allowLinker': true}); ga('require', 'linker'); ga('linker:autoLink', \['fastspring.com', 'realpython.onfastspring.com', 'onfastspring.com'\]); ga('send', 'pageview'); ga('require', 'ecommerce'); 
 
- [![Real Python](/static/real-python-logo.ab1a167d9717.svg)](/)  
-
-*   [Start Here](/start-here/)
-*   [Tutorials](/)
-*   [Products](#)
-    
-    [Python Basics Book](/products/python-basics-book/) [Python Tricks Book](/products/python-tricks-book/) [The Real Python Course](/products/real-python-course/) [Managing Python Dependencies](/products/managing-python-dependencies/) [Sublime Text + Python Setup](/products/sublime-python/) [Pythonic Wallpapers Pack](/products/pythonic-wallpapers/) [Python Mugs, T-Shirts, and More](https://nerdlettering.com) [Pythonista Cafe Community](https://www.pythonistacafe.com) [Browse All »](/products/)
-    
-*   [More](#)
-    
-    [Newsletter](/newsletter/) [Resources](/resources/) [Mentoring](/mentoring/) [Support](/support/) [The Team](/team/) [Join Real Python](/write-for-us/) [Python Job Board](https://www.pythonjobshq.com)
-    
-
-![OOP in Python 3](https://files.realpython.com/media/Object-Oriented-Programming-OOP-in-Python-3_Watermarked.0d29780806d5.jpg)
-
-Object-Oriented Programming (OOP) in Python 3
-=============================================
-
-by [Real Python](/) Feb 13, 2018 [](#reader-comments)[intermediate](/tutorials/intermediate/) [python](/tutorials/python/)
-
-Table of Contents
-
-*   [What Is Object-Oriented Programming (OOP)?](#what-is-object-oriented-programming-oop)
-*   [Classes in Python](#classes-in-python)
-*   [Python Objects (Instances)](#python-objects-instances)
-*   [How To Define a Class in Python](#how-to-define-a-class-in-python)
-    *   [Instance Attributes](#instance-attributes)
-    *   [Class Attributes](#class-attributes)
-*   [Instantiating Objects](#instantiating-objects)
-    *   [What’s Going On?](#whats-going-on)
-    *   [Review Exercises (#1)](#review-exercises-1)
-*   [Instance Methods](#instance-methods)
-    *   [Modifying Attributes](#modifying-attributes)
-*   [Python Object Inheritance](#python-object-inheritance)
-    *   [Dog Park Example](#dog-park-example)
-    *   [Extending the Functionality of a Parent Class](#extending-the-functionality-of-a-parent-class)
-    *   [Parent vs. Child Classes](#parent-vs-child-classes)
-    *   [Overriding the Functionality of a Parent Class](#overriding-the-functionality-of-a-parent-class)
-    *   [Review Exercises (#2)](#review-exercises-2)
-*   [Conclusion](#conclusion)
-
-In this article you’ll pick up the following basic concepts of OOP in Python:
-
-*   Python Classes
-*   Object Instances
-*   Defining and Working with Methods
-*   OOP Inheritance
-
-**Free Bonus:** [Click here to get access to a free Python OOP Cheat Sheet](#) that points you to the best tutorials, videos, and books to learn more about Object-Oriented Programming with Python.
 
 What Is Object-Oriented Programming (OOP)?
 ------------------------------------------
@@ -63,7 +13,6 @@ Another common programming paradigm is _procedural programming_ which structures
 
 The key takeaway is that objects are at the center of the object-oriented programming paradigm, not only representing the data, as in procedural programming, but in the overall structure of the program as well.
 
-> **NOTE**: Since Python is a multi-paradigm programming language, you can choose the paradigm that best suits the problem at hand, mix different paradigms in one program, and/or switch from one paradigm to another as your program evolves.
 
 Classes in Python
 -----------------
@@ -104,14 +53,6 @@ class Dog:
 You start with the `class` keyword to indicate that you are creating a class, then you add the name of the class (using [CamelCase notation](https://en.wikipedia.org/wiki/Camel_case), starting with a capital letter.)
 
 Also, we used the Python keyword `pass` here. This is very often used as a place holder where code will eventually go. It allows us to run this code without throwing an error.
-
-> **Note:** The above code is correct on Python 3. On Python 2.x (“legacy Python”) you’d use a slightly different class definition:
-> 
-> \# Python 2.x Class Definition:
-> class Dog(object):
->     pass
-> 
-> The `(object)` part in parentheses specifies the parent class that you are inheriting from (more on this below.) In Python 3 this is no longer necessary because it is the implicit default.
 
 ### Instance Attributes
 
@@ -604,102 +545,6 @@ for dog in my\_pets.dogs:
 
 print("And they're all {}s, of course.".format(dog.species))
 
-Exercise: "Hungry Dogs" Show/Hide
-
-Using the same file, add an instance attribute of `is_hungry = True` to the `Dog` class. Then add a method called `eat()` which changes the value of `is_hungry` to `False` when called. Figure out the best way to feed each dog and then output “My dogs are hungry.” if all are hungry or “My dogs are not hungry.” if all are not hungry. The final output should look like this:
-
-I have 3 dogs. 
-Tom is 6. 
-Fletcher is 7. 
-Larry is 9. 
-And they're all mammals, of course. 
-My dogs are not hungry.
-
-Solution: "Hungry Dogs" Show/Hide
-
-\# Parent class
-class Pets:
-
-    dogs \= \[\]
-
-    def \_\_init\_\_(self, dogs):
-        self.dogs \= dogs
-
-\# Parent class
-class Dog:
-
-    \# Class attribute
-    species \= 'mammal'
-
-    \# Initializer / Instance attributes
-    def \_\_init\_\_(self, name, age):
-        self.name \= name
-        self.age \= age
-        self.is\_hungry \= True
-
-    \# Instance method
-    def description(self):
-        return self.name, self.age
-
-    \# Instance method
-    def speak(self, sound):
-        return "%s says %s" % (self.name, sound)
-
-    \# Instance method
-    def eat(self):
-        self.is\_hungry \= False
-
-\# Child class (inherits from Dog class)
-class RussellTerrier(Dog):
-    def run(self, speed):
-        return "%s runs %s" % (self.name, speed)
-
-\# Child class (inherits from Dog class)
-class Bulldog(Dog):
-    def run(self, speed):
-        return "%s runs %s" % (self.name, speed)
-
-\# Create instances of dogs
-my\_dogs \= \[
-    Bulldog("Tom", 6), 
-    RussellTerrier("Fletcher", 7), 
-    Dog("Larry", 9)
-\]
-
-\# Instantiate the Pets class
-my\_pets \= Pets(my\_dogs)
-
-\# Output
-print("I have {} dogs.".format(len(my\_pets.dogs)))
-for dog in my\_pets.dogs:
-    dog.eat()
-    print("{} is {}.".format(dog.name, dog.age))
-
-print("And they're all {}s, of course.".format(dog.species))
-
-are\_my\_dogs\_hungry \= False
-for dog in my\_pets.dogs:
-    if dog.is\_hungry:
-        are\_my\_dogs\_hungry \= True
-
-if are\_my\_dogs\_hungry:
-    print("My dogs are hungry.")
-else:
-    print("My dogs are not hungry.")
-
-Exercise: "Dog Walking" Show/Hide
-
-Next, add a `walk()` method to both the `Pets` and `Dog` classes so that when you call the method on the `Pets` class, each dog instance assigned to the `Pets` class will `walk()`. Save this as _dog\_walking.py_. This is slightly more difficult.
-
-Start by implementing the method in the same manner as the `speak()` method. As for the method in the `Pets` class, you will need to iterate through the list of dogs, then call the method itself.
-
-The output should look like this:
-
-Tom is walking!
-Fletcher is walking!
-Larry is walking!
-
-Solution: "Dog Walking" Show/Hide
 
 \# Parent class
 class Pets:
