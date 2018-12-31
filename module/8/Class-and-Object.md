@@ -47,8 +47,8 @@ How To Define a Class in Python
 
 Defining a class is simple in Python:
 
-class Dog:
-    pass
+	class Dog:
+	    pass
 
 You start with the `class` keyword to indicate that you are creating a class, then you add the name of the class (using [CamelCase notation](https://en.wikipedia.org/wiki/Camel_case), starting with a capital letter.)
 
@@ -58,12 +58,12 @@ Also, we used the Python keyword `pass` here. This is very often used as a place
 
 All classes create objects, and all objects contain characteristics called attributes (referred to as properties in the opening paragraph). Use the `__init__()` method to initialize (e.g., specify) an object’s initial attributes by giving them their default value (or state). This method must have at least one argument as well as the `self` variable, which refers to the object itself (e.g., Dog).
 
-class Dog:
+	class Dog:
 
-    \# Initializer / Instance Attributes
-    def \_\_init\_\_(self, name, age):
-        self.name \= name
-        self.age \= age
+	    \# Initializer / Instance Attributes
+	    def \_\_init\_\_(self, name, age):
+		self.name \= name
+		self.age \= age
 
 In the case of our `Dog()` class, each dog has a specific name and age, which is obviously important to know for when you start actually creating different dogs. Remember: the class is just for defining the Dog, not actually creating _instances_ of individual dogs with specific names and ages; we’ll get to that shortly.
 
@@ -75,15 +75,15 @@ Similarly, the `self` variable is also an instance of the class. Since instances
 
 While instance attributes are specific to each object, class attributes are the same for all instances—which in this case is _all_ dogs.
 
-class Dog:
+	class Dog:
 
-    \# Class Attribute
-    species \= 'mammal'
+	    \# Class Attribute
+	    species \= 'mammal'
 
-    \# Initializer / Instance Attributes
-    def \_\_init\_\_(self, name, age):
-        self.name \= name
-        self.age \= age
+	    \# Initializer / Instance Attributes
+	    def \_\_init\_\_(self, name, age):
+		self.name \= name
+		self.age \= age
 
 So while each dog has a unique name and age, every dog will be a mammal.
 
@@ -96,19 +96,19 @@ Instantiating is a fancy term for creating a new, unique instance of a class.
 
 For example:
 
-\>>>
+	\>>>
 
-\>>> class Dog:
-...     pass
-...
-\>>> Dog()
-<\_\_main\_\_.Dog object at 0x1004ccc50>
-\>>> Dog()
-<\_\_main\_\_.Dog object at 0x1004ccc90>
-\>>> a \= Dog()
-\>>> b \= Dog()
-\>>> a \== b
-False
+	\>>> class Dog:
+	...     pass
+	...
+	\>>> Dog()
+	<\_\_main\_\_.Dog object at 0x1004ccc50>
+	\>>> Dog()
+	<\_\_main\_\_.Dog object at 0x1004ccc90>
+	\>>> a \= Dog()
+	\>>> b \= Dog()
+	\>>> a \== b
+	False
 
 We started by defining a new `Dog()` class, then created two new dogs, each assigned to different objects. So, to create an instance of a class, you use the the class name, followed by parentheses. Then to demonstrate that each instance is actually different, we instantiated two more dogs, assigning each to a variable, then tested if those variables are equal.
 
@@ -125,34 +125,34 @@ What do you think the type of a class instance is?
 
 Let’s look at a slightly more complex example…
 
-class Dog:
+	class Dog:
 
-    \# Class Attribute
-    species \= 'mammal'
+	    \# Class Attribute
+	    species \= 'mammal'
 
-    \# Initializer / Instance Attributes
-    def \_\_init\_\_(self, name, age):
-        self.name \= name
-        self.age \= age
+	    \# Initializer / Instance Attributes
+	    def \_\_init\_\_(self, name, age):
+		self.name \= name
+		self.age \= age
 
-\# Instantiate the Dog object
-philo \= Dog("Philo", 5)
-mikey \= Dog("Mikey", 6)
+	\# Instantiate the Dog object
+	philo \= Dog("Philo", 5)
+	mikey \= Dog("Mikey", 6)
 
-\# Access the instance attributes
-print("{} is {} and {} is {}.".format(
-    philo.name, philo.age, mikey.name, mikey.age))
+	\# Access the instance attributes
+	print("{} is {} and {} is {}.".format(
+	    philo.name, philo.age, mikey.name, mikey.age))
 
-\# Is Philo a mammal?
-if philo.species \== "mammal":
-    print("{0} is a {1}!".format(philo.name, philo.species))
+	\# Is Philo a mammal?
+	if philo.species \== "mammal":
+	    print("{0} is a {1}!".format(philo.name, philo.species))
 
 > **NOTE**: Notice how we use dot notation to access attributes from each object.
 
 Save this as _dog\_class.py_, then run the program. You should see:
 
-Philo is 5 and Mikey is 6.
-Philo is a mammal!
+	Philo is 5 and Mikey is 6.
+	Philo is a mammal!
 
 ### What’s Going On?
 
@@ -172,63 +172,63 @@ The oldest dog is 7 years old.
 
 Solution: "The Oldest Dog" Show/Hide
 
-class Dog:
+	class Dog:
 
-    \# Class Attribute
-    species \= 'mammal'
+	    \# Class Attribute
+	    species \= 'mammal'
 
-    \# Initializer / Instance Attributes
-    def \_\_init\_\_(self, name, age):
-        self.name \= name
-        self.age \= age
+	    \# Initializer / Instance Attributes
+	    def \_\_init\_\_(self, name, age):
+		self.name \= name
+		self.age \= age
 
-\# Instantiate the Dog object
-jake \= Dog("Jake", 7)
-doug \= Dog("Doug", 4)
-william \= Dog("William", 5)
+	\# Instantiate the Dog object
+	jake \= Dog("Jake", 7)
+	doug \= Dog("Doug", 4)
+	william \= Dog("William", 5)
 
-\# Determine the oldest dog
-def get\_biggest\_number(\*args):
-    return max(args)
+	\# Determine the oldest dog
+	def get\_biggest\_number(\*args):
+	    return max(args)
 
-\# Output
-print("The oldest dog is {} years old.".format(
-    get\_biggest\_number(jake.age, doug.age, william.age)))
+	\# Output
+	print("The oldest dog is {} years old.".format(
+	    get\_biggest\_number(jake.age, doug.age, william.age)))
 
 Instance Methods
 ----------------
 
 Instance methods are defined inside a class and are used to get the contents of an instance. They can also be used to perform operations with the attributes of our objects. Like the `__init__` method, the first argument is always `self`:
 
-class Dog:
+	class Dog:
 
-    \# Class Attribute
-    species \= 'mammal'
+	    \# Class Attribute
+	    species \= 'mammal'
 
-    \# Initializer / Instance Attributes
-    def \_\_init\_\_(self, name, age):
-        self.name \= name
-        self.age \= age
+	    \# Initializer / Instance Attributes
+	    def \_\_init\_\_(self, name, age):
+		self.name \= name
+		self.age \= age
 
-    \# instance method
-    def description(self):
-        return "{} is {} years old".format(self.name, self.age)
+	    \# instance method
+	    def description(self):
+		return "{} is {} years old".format(self.name, self.age)
 
-    \# instance method
-    def speak(self, sound):
-        return "{} says {}".format(self.name, sound)
+	    \# instance method
+	    def speak(self, sound):
+		return "{} says {}".format(self.name, sound)
 
-\# Instantiate the Dog object
-mikey \= Dog("Mikey", 6)
+	\# Instantiate the Dog object
+	mikey \= Dog("Mikey", 6)
 
-\# call our instance methods
-print(mikey.description())
-print(mikey.speak("Gruff Gruff"))
+	\# call our instance methods
+	print(mikey.description())
+	print(mikey.speak("Gruff Gruff"))
 
 Save this as _dog\_instance\_methods.py_, then run it:
 
-Mikey is 6 years old
-Mikey says Gruff Gruff
+	Mikey is 6 years old
+	Mikey says Gruff Gruff
 
 In the latter method, `speak()`, we are defining behavior. What other behaviors could you assign to a dog? Look back to the beginning paragraph to see some example behaviors for other objects.
 
@@ -236,20 +236,20 @@ In the latter method, `speak()`, we are defining behavior. What other behaviors 
 
 You can change the value of attributes based on some behavior:
 
-\>>>
+	\>>>
 
-\>>> class Email:
-...     def \_\_init\_\_(self):
-...         self.is\_sent \= False
-...     def send\_email(self):
-...         self.is\_sent \= True
-...
-\>>> my\_email \= Email()
-\>>> my\_email.is\_sent
-False
-\>>> my\_email.send\_email()
-\>>> my\_email.is\_sent
-True
+	\>>> class Email:
+	...     def \_\_init\_\_(self):
+	...         self.is\_sent \= False
+	...     def send\_email(self):
+	...         self.is\_sent \= True
+	...
+	\>>> my\_email \= Email()
+	\>>> my\_email.is\_sent
+	False
+	\>>> my\_email.send\_email()
+	\>>> my\_email.is\_sent
+	True
 
 Here, we added a method to send an email, which updates the `is_sent` variable to `True`.
 
@@ -262,15 +262,14 @@ It’s important to note that child classes override _or_ extend the functionali
 
 When you define a new class, Python 3 it implicitly uses `object` as the parent class. So the following two definitions are equivalent:
 
-class Dog(object):
-    pass
+	class Dog(object):
+	    pass
 
 \# In Python 3, this is the same as:
 
-class Dog:
-    pass
+	class Dog:
+	    pass
 
-> **Note:** In Python 2.x there’s a distinction between [_new-style_ and _old-style_ classes](https://wiki.python.org/moin/NewClassVsClassicClass). I won’t go into detail here, but you’ll generally want to specify `object` as the parent class to ensure you’re definint a new-style class if you’re writing Python 2 OOP code.
 
 ### Dog Park Example
 
@@ -278,18 +277,18 @@ Let’s pretend that we’re at a dog park. There are multiple Dog objects engag
 
 What’s another way to differentiate one dog from another? How about the dog’s breed:
 
-\>>>
+	\>>>
 
-\>>> class Dog:
-...     def \_\_init\_\_(self, breed):
-...         self.breed \= breed
-...
-\>>> spencer \= Dog("German Shepard")
-\>>> spencer.breed
-'German Shepard'
-\>>> sara \= Dog("Boston Terrier")
-\>>> sara.breed
-'Boston Terrier'
+	\>>> class Dog:
+	...     def \_\_init\_\_(self, breed):
+	...         self.breed \= breed
+	...
+	\>>> spencer \= Dog("German Shepard")
+	\>>> spencer.breed
+	'German Shepard'
+	\>>> sara \= Dog("Boston Terrier")
+	\>>> sara.breed
+	'Boston Terrier'
 
 Each breed of dog has slightly different behaviors. To take these into account, let’s create separate classes for each breed. These are child classes of the parent `Dog` class.
 
@@ -298,49 +297,49 @@ Each breed of dog has slightly different behaviors. To take these into account, 
 Create a new file called _dog\_inheritance.py_:
 
 \# Parent class
-class Dog:
+	class Dog:
 
-    \# Class attribute
-    species \= 'mammal'
+	    \# Class attribute
+	    species \= 'mammal'
 
-    \# Initializer / Instance attributes
-    def \_\_init\_\_(self, name, age):
-        self.name \= name
-        self.age \= age
+	    \# Initializer / Instance attributes
+	    def \_\_init\_\_(self, name, age):
+		self.name \= name
+		self.age \= age
 
-    \# instance method
-    def description(self):
-        return "{} is {} years old".format(self.name, self.age)
+	    \# instance method
+	    def description(self):
+		return "{} is {} years old".format(self.name, self.age)
 
-    \# instance method
-    def speak(self, sound):
-        return "{} says {}".format(self.name, sound)
+	    \# instance method
+	    def speak(self, sound):
+		return "{} says {}".format(self.name, sound)
 
-\# Child class (inherits from Dog class)
-class RussellTerrier(Dog):
-    def run(self, speed):
-        return "{} runs {}".format(self.name, speed)
+	\# Child class (inherits from Dog class)
+	class RussellTerrier(Dog):
+	    def run(self, speed):
+		return "{} runs {}".format(self.name, speed)
 
-\# Child class (inherits from Dog class)
-class Bulldog(Dog):
-    def run(self, speed):
-        return "{} runs {}".format(self.name, speed)
+	\# Child class (inherits from Dog class)
+	class Bulldog(Dog):
+	    def run(self, speed):
+		return "{} runs {}".format(self.name, speed)
 
-\# Child classes inherit attributes and
-\# behaviors from the parent class
-jim \= Bulldog("Jim", 12)
-print(jim.description())
+	\# Child classes inherit attributes and
+	\# behaviors from the parent class
+	jim \= Bulldog("Jim", 12)
+	print(jim.description())
 
-\# Child classes have specific attributes
-\# and behaviors as well
-print(jim.run("slowly"))
+	\# Child classes have specific attributes
+	\# and behaviors as well
+	print(jim.run("slowly"))
 
 Read the comments aloud as you work through this program to help you understand what’s happening, then before you run the program, see if you can predict the expected output.
 
 You should see:
 
-Jim is 12 years old
-Jim runs slowly
+	Jim is 12 years old
+	Jim runs slowly
 
 We haven’t added any special attributes or methods to differentiate a `RussellTerrier` from a `Bulldog`, but since they’re now two different classes, we could for instance give them different class attributes defining their respective speeds.
 
@@ -350,71 +349,71 @@ The `isinstance()` function is used to determine if an instance is also an insta
 
 Save this as _dog\_isinstance.py_:
 
-\# Parent class
-class Dog:
+	\# Parent class
+	class Dog:
 
-    \# Class attribute
-    species \= 'mammal'
+	    \# Class attribute
+	    species \= 'mammal'
 
-    \# Initializer / Instance attributes
-    def \_\_init\_\_(self, name, age):
-        self.name \= name
-        self.age \= age
+	    \# Initializer / Instance attributes
+	    def \_\_init\_\_(self, name, age):
+		self.name \= name
+		self.age \= age
 
-    \# instance method
-    def description(self):
-        return "{} is {} years old".format(self.name, self.age)
+	    \# instance method
+	    def description(self):
+		return "{} is {} years old".format(self.name, self.age)
 
-    \# instance method
-    def speak(self, sound):
-        return "{} says {}".format(self.name, sound)
+	    \# instance method
+	    def speak(self, sound):
+		return "{} says {}".format(self.name, sound)
 
-\# Child class (inherits from Dog() class)
-class RussellTerrier(Dog):
-    def run(self, speed):
-        return "{} runs {}".format(self.name, speed)
+	\# Child class (inherits from Dog() class)
+	class RussellTerrier(Dog):
+	    def run(self, speed):
+		return "{} runs {}".format(self.name, speed)
 
-\# Child class (inherits from Dog() class)
-class Bulldog(Dog):
-    def run(self, speed):
-        return "{} runs {}".format(self.name, speed)
+	\# Child class (inherits from Dog() class)
+	class Bulldog(Dog):
+	    def run(self, speed):
+		return "{} runs {}".format(self.name, speed)
 
-\# Child classes inherit attributes and
-\# behaviors from the parent class
-jim \= Bulldog("Jim", 12)
-print(jim.description())
+	\# Child classes inherit attributes and
+	\# behaviors from the parent class
+	jim \= Bulldog("Jim", 12)
+	print(jim.description())
 
-\# Child classes have specific attributes
-\# and behaviors as well
-print(jim.run("slowly"))
+	\# Child classes have specific attributes
+	\# and behaviors as well
+	print(jim.run("slowly"))
 
-\# Is jim an instance of Dog()?
-print(isinstance(jim, Dog))
+	\# Is jim an instance of Dog()?
+	print(isinstance(jim, Dog))
 
-\# Is julie an instance of Dog()?
-julie \= Dog("Julie", 100)
-print(isinstance(julie, Dog))
+	\# Is julie an instance of Dog()?
+	julie \= Dog("Julie", 100)
+	print(isinstance(julie, Dog))
 
-\# Is johnny walker an instance of Bulldog()
-johnnywalker \= RussellTerrier("Johnny Walker", 4)
-print(isinstance(johnnywalker, Bulldog))
+	\# Is johnny walker an instance of Bulldog()
+	johnnywalker \= RussellTerrier("Johnny Walker", 4)
+	print(isinstance(johnnywalker, Bulldog))
 
-\# Is julie and instance of jim?
-print(isinstance(julie, jim))
+	\# Is julie and instance of jim?
+	print(isinstance(julie, jim))
 
 Output:
 
-\>>>
+	\>>>
 
-('Jim', 12)
-Jim runs slowly
-True
-True
-False
-Traceback (most recent call last):
-  File "dog\_isinstance.py", line 50, in <module>
-    print(isinstance(julie, jim))
-TypeError: isinstance() arg 2 must be a class, type, or tuple of classes and types
+	('Jim', 12)
+	Jim runs slowly
+	True
+	True
+	False
+	Traceback (most recent call last):
+	  File "dog\_isinstance.py", line 50, in <module>
+	    print(isinstance(julie, jim))
+	TypeError: isinstance() arg 2 must be a class, type, or tuple of classes and types
 
 Make sense? Both `jim` and `julie` are instances of the `Dog()` class, while `johnnywalker` is not an instance of the `Bulldog()` class. Then as a sanity check, we tested if `julie` is an instance of `jim`, which is impossible since `jim` is an `instance` of a class rather than a class itself—hence the reason for the `TypeError`.
 
@@ -422,73 +421,25 @@ Make sense? Both `jim` and `julie` are instances of the `Dog()` class, while `jo
 
 Remember that child classes can also override attributes and behaviors from the parent class. For examples:
 
-\>>>
+	\>>>
 
-\>>> class Dog:
-...     species \= 'mammal'
-...
-\>>> class SomeBreed(Dog):
-...     pass
-...
-\>>> class SomeOtherBreed(Dog):
-...     species \= 'reptile'
-...
-\>>> frank \= SomeBreed()
-\>>> frank.species
-'mammal'
-\>>> beans \= SomeOtherBreed()
-\>>> beans.species
-'reptile'
+	\>>> class Dog:
+	...     species \= 'mammal'
+	...
+	\>>> class SomeBreed(Dog):
+	...     pass
+	...
+	\>>> class SomeOtherBreed(Dog):
+	...     species \= 'reptile'
+	...
+	\>>> frank \= SomeBreed()
+	\>>> frank.species
+	'mammal'
+	\>>> beans \= SomeOtherBreed()
+	\>>> beans.species
+	'reptile'
 
 The `SomeBreed()` class inherits the `species` from the parent class, while the `SomeOtherBreed()` class overrides the `species`, setting it to `reptile`.
-
-### Review Exercises (#2)
-
-Exercise: "Dog Inheritance" Show/Hide
-
-Create a `Pets` class that holds instances of dogs; this class is completely separate from the `Dog` class. In other words, the `Dog` class does not inherit from the `Pets` class. Then assign three dog instances to an instance of the `Pets` class. Start with the following code below. Save the file as _pets\_class.py_. Your output should look like this:
-
-I have 3 dogs. 
-Tom is 6. 
-Fletcher is 7. 
-Larry is 9. 
-And they're all mammals, of course.
-
-Starter code:
-
-\# Parent class
-class Dog:
-
-    \# Class attribute
-    species \= 'mammal'
-
-    \# Initializer / Instance attributes
-    def \_\_init\_\_(self, name, age):
-        self.name \= name
-        self.age \= age
-
-    \# instance method
-    def description(self):
-        return "{} is {} years old".format(self.name, self.age)
-
-    \# instance method
-    def speak(self, sound):
-        return "{} says {}".format(self.name, sound)
-
-\# Child class (inherits from Dog class)
-class RussellTerrier(Dog):
-    def run(self, speed):
-        return "{} runs {}".format(self.name, speed)
-
-\# Child class (inherits from Dog class)
-class Bulldog(Dog):
-    def run(self, speed):
-        return "{} runs {}".format(self.name, speed)
-
-Solution: "Dog Inheritance" Show/Hide
-
-\# Parent class
-class Pets:
 
     dogs \= \[\]
 
@@ -547,66 +498,66 @@ print("And they're all {}s, of course.".format(dog.species))
 
 
 \# Parent class
-class Pets:
+	class Pets:
 
-    dogs \= \[\]
+	    dogs \= \[\]
 
-    def \_\_init\_\_(self, dogs):
-        self.dogs \= dogs
+	    def \_\_init\_\_(self, dogs):
+		self.dogs \= dogs
 
-    def walk(self):
-        for dog in self.dogs:
-            print(dog.walk())
+	    def walk(self):
+		for dog in self.dogs:
+		    print(dog.walk())
 
 \# Parent class
-class Dog:
+	class Dog:
 
-    \# Class attribute
-    species \= 'mammal'
-    is\_hungry \= True
+	    \# Class attribute
+	    species \= 'mammal'
+	    is\_hungry \= True
 
-    \# Initializer / instance attributes
-    def \_\_init\_\_(self, name, age):
-        self.name \= name
-        self.age \= age
+	    \# Initializer / instance attributes
+	    def \_\_init\_\_(self, name, age):
+		self.name \= name
+		self.age \= age
 
-    \# Instance method
-    def description(self):
-        return self.name, self.age
+	    \# Instance method
+	    def description(self):
+		return self.name, self.age
 
-    \# Instance method
-    def speak(self, sound):
-        return "%s says %s" % (self.name, sound)
+	    \# Instance method
+	    def speak(self, sound):
+		return "%s says %s" % (self.name, sound)
 
-    \# Instance method
-    def eat(self):
-        self.is\_hungry \= False
+	    \# Instance method
+	    def eat(self):
+		self.is\_hungry \= False
 
-    def walk(self):
-        return "%s is walking!" % (self.name)
+	    def walk(self):
+		return "%s is walking!" % (self.name)
 
-\# Child class (inherits from Dog class)
-class RussellTerrier(Dog):
-    def run(self, speed):
-        return "%s runs %s" % (self.name, speed)
+	\# Child class (inherits from Dog class)
+	class RussellTerrier(Dog):
+	    def run(self, speed):
+		return "%s runs %s" % (self.name, speed)
 
-\# Child class (inherits from Dog class)
-class Bulldog(Dog):
-    def run(self, speed):
-        return "%s runs %s" % (self.name, speed)
+	\# Child class (inherits from Dog class)
+	class Bulldog(Dog):
+	    def run(self, speed):
+		return "%s runs %s" % (self.name, speed)
 
-\# Create instances of dogs
-my\_dogs \= \[
-    Bulldog("Tom", 6), 
-    RussellTerrier("Fletcher", 7), 
-    Dog("Larry", 9)
-\]
+	\# Create instances of dogs
+	my\_dogs \= \[
+	    Bulldog("Tom", 6), 
+	    RussellTerrier("Fletcher", 7), 
+	    Dog("Larry", 9)
+	\]
 
-\# Instantiate the Pet class
-my\_pets \= Pets(my\_dogs)
+	\# Instantiate the Pet class
+	my\_pets \= Pets(my\_dogs)
 
-\# Output
-my\_pets.walk()
+	\# Output
+	my\_pets.walk()
 
 
 
