@@ -62,10 +62,10 @@ A short usage example:
 
 	import csv
 	with open('student.csv', newline='') as csvfile:
-	     csv_reader = csv.reader(csvfile, delimiter=',')
-	     line_count = 0
-		 for row in csv_reader:
-	        if line_count == 0:
+		csv_reader = csv.reader(csvfile, delimiter=',')
+		line_count = 0
+		for row in csv_reader:
+			if line_count == 0:
 				print(f'Column names are {", ".join(row)}')
 			else:
 				print(f'{row[2]}. {row[0]} is from Class of {row[1]}.')
