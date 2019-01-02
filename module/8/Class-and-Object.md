@@ -60,10 +60,10 @@ All classes create objects, and all objects contain characteristics called attri
 
 	class Dog:
 
-	    \# Initializer / Instance Attributes
-	    def \_\_init\_\_(self, name, age):
-		self.name \= name
-		self.age \= age
+	    # Initializer / Instance Attributes
+	    def __init__(self, name, age):
+		self.name = name
+		self.age = age
 
 In the case of our `Dog()` class, each dog has a specific name and age, which is obviously important to know for when you start actually creating different dogs. Remember: the class is just for defining the Dog, not actually creating _instances_ of individual dogs with specific names and ages; we’ll get to that shortly.
 
@@ -500,7 +500,7 @@ print("And they're all {}s, of course.".format(dog.species))
 \# Parent class
 	class Pets:
 
-	    dogs \= \[\]
+	    dogs = []
 
 	    def \_\_init\_\_(self, dogs):
 		self.dogs \= dogs
