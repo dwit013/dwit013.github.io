@@ -79,7 +79,7 @@ While instance attributes are specific to each object, class attributes are the 
 
 	class Dog:
 	    # Class Attribute
-	    species \= 'mammal'
+	    species = 'mammal'
 
 	    # Initializer/Instance Attributes
 	    def __init__(self, name, age):

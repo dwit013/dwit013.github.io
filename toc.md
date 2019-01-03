@@ -9,7 +9,7 @@ layout: page
 <li>
     Module 1 - Git and GitHub
     <ul type='none'>
-        <li> 1.1 <a href="../module/1/git"> Introdcution to Git </a></li>
+        <li> 1.1 <a href="../module/1/git"> Introduction to Git </a></li>
         <li> 1.2 <a href="../module/1/git-basics"> Git Basics </a></li>
         <li> 1.3 <a href="../module/1/github"> GitHub </a></li>
     </ul>
@@ -19,12 +19,12 @@ layout: page
     Module 2 - Python Basics
     <ul type='none'>
         <li> 2.1 <a href="../module/2/python"> Introduction to Python </a></li>
-        <li> 2.2 <a href="../module/2/basic-datatypes"> Basic Datatypes </a></li>
+        <li> 2.2 <a href="../module/2/basic-datatypes"> Basic Data Types </a></li>
     </ul>
 </li>
 
 <li>
-    Module 3 - Advanced Datatypes
+    Module 3 - Advanced Data Types
     <ul type='none'>
         <li> 3.1 <a href="../module/3/list"> List </a></li>
         <li> 3.2 <a href="../module/3/tuples"> Tuples </a></li>
@@ -65,5 +65,13 @@ layout: page
         <li> 7.1 <a href="../module/7/regular-expressions"> Regular Expressions </a></li>
         <li> 7.2 <a href="../module/7/file-handling-basic"> File Handling Basic </a></li>
         <li> 7.3 <a href="../module/7/file-handling-advanced"> File Handling Advanced </a></li>
+    </ul>
+</li>
+
+<li>
+    Module 8 - Object Oriented Programming
+    <ul type='none'>
+        <li> 8.1 <a href="../module/8/class-and-object"> Class and Object </a></li>
+        <li> 8.2 <a href="../module/8/inheritance"> Class and Object </a></li>
     </ul>
 </li>
