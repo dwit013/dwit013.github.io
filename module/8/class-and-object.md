@@ -8,7 +8,7 @@ layout: page
 
 ## Object-Oriented Programming
 
-## 8.1 Class and Objects
+## 8.1 Class and Object
 
 Object-oriented Programming, or **OOP** for short, is a [programming paradigm](http://en.wikipedia.org/wiki/Programming_paradigm) which provides a means of structuring programs so that properties and behaviors are bundled into individual **objects**.
 
@@ -19,7 +19,6 @@ Put another way, object-oriented programming is an approach for modeling concret
 Another common programming paradigm is **procedural programming** which structures a program like a recipe in that it provides a set of steps, in the form of functions and code blocks, which flow sequentially in order to complete a task.
 
 The key takeaway is that objects are at the center of the object-oriented programming paradigm, not only representing the data, as in procedural programming, but in the overall structure of the program as well.
-
 
 ## Classes in Python
 
@@ -111,7 +110,6 @@ We started by defining a new `Dog()` class, then created two new dogs, each assi
 
 What do you think the type of a class instance is?
 
-	>>>
 	>>> class Dog:
 	...     pass
 	...
@@ -119,7 +117,7 @@ What do you think the type of a class instance is?
 	>>> type(a)
 	<class '__main__.Dog'>
 
-Let’s look at a slightly more complex example…
+Let’s look at a slightly more complex example.
 
 	class Dog:
 	    # Class Attribute
@@ -210,310 +208,7 @@ You can change the value of attributes based on some behavior:
 
 Here, we added a method to send an email, which updates the `is_sent` variable to `True`.
 
-## Python Object Inheritance
-
-Inheritance is the process by which one class takes on the attributes and methods of another. Newly formed classes are called _child classes_, and the classes that child classes are derived from are called _parent classes_.
-
-It’s important to note that child classes override _or_ extend the functionality (e.g., attributes and behaviors) of parent classes. In other words, child classes inherit all of the parent’s attributes and behaviors but can also specify different behavior to follow. The most basic type of class is an `object`, which generally all other classes inherit as their parent.
-
-When you define a new class, Python 3 it implicitly uses `object` as the parent class. So the following two definitions are equivalent:
-
-	class Dog(object):
-	    pass
-
-\# In Python 3, this is the same as:
-
-	class Dog:
-	    pass
-
-
-### Dog Park Example
-
-Let’s pretend that we’re at a dog park. There are multiple Dog objects engaging in Dog behaviors, each with different attributes. In regular-speak that means some dogs are running, while some are stretching and some are just watching other dogs. Furthermore, each dog has been named by its owner and, since each dog is living and breathing, each ages.
-
-What’s another way to differentiate one dog from another? How about the dog’s breed:
-
-	\>>>
-
-	\>>> class Dog:
-	...     def \_\_init\_\_(self, breed):
-	...         self.breed \= breed
-	...
-	\>>> spencer \= Dog("German Shepard")
-	\>>> spencer.breed
-	'German Shepard'
-	\>>> sara \= Dog("Boston Terrier")
-	\>>> sara.breed
-	'Boston Terrier'
-
-Each breed of dog has slightly different behaviors. To take these into account, let’s create separate classes for each breed. These are child classes of the parent `Dog` class.
-
-### Extending the Functionality of a Parent Class
-
-Create a new file called _dog\_inheritance.py_:
-
-\# Parent class
-	class Dog:
-
-	    \# Class attribute
-	    species \= 'mammal'
-
-	    \# Initializer / Instance attributes
-	    def \_\_init\_\_(self, name, age):
-		self.name \= name
-		self.age \= age
-
-	    \# instance method
-	    def description(self):
-		return "{} is {} years old".format(self.name, self.age)
-
-	    \# instance method
-	    def speak(self, sound):
-		return "{} says {}".format(self.name, sound)
-
-	\# Child class (inherits from Dog class)
-	class RussellTerrier(Dog):
-	    def run(self, speed):
-		return "{} runs {}".format(self.name, speed)
-
-	\# Child class (inherits from Dog class)
-	class Bulldog(Dog):
-	    def run(self, speed):
-		return "{} runs {}".format(self.name, speed)
-
-	\# Child classes inherit attributes and
-	\# behaviors from the parent class
-	jim \= Bulldog("Jim", 12)
-	print(jim.description())
-
-	\# Child classes have specific attributes
-	\# and behaviors as well
-	print(jim.run("slowly"))
-
-Read the comments aloud as you work through this program to help you understand what’s happening, then before you run the program, see if you can predict the expected output.
-
-You should see:
-
-	Jim is 12 years old
-	Jim runs slowly
-
-We haven’t added any special attributes or methods to differentiate a `RussellTerrier` from a `Bulldog`, but since they’re now two different classes, we could for instance give them different class attributes defining their respective speeds.
-
-### Parent vs. Child Classes
-
-The `isinstance()` function is used to determine if an instance is also an instance of a certain parent class.
-
-Save this as _dog\_isinstance.py_:
-
-	\# Parent class
-	class Dog:
-
-	    \# Class attribute
-	    species \= 'mammal'
-
-	    \# Initializer / Instance attributes
-	    def \_\_init\_\_(self, name, age):
-		self.name \= name
-		self.age \= age
-
-	    \# instance method
-	    def description(self):
-		return "{} is {} years old".format(self.name, self.age)
-
-	    \# instance method
-	    def speak(self, sound):
-		return "{} says {}".format(self.name, sound)
-
-	\# Child class (inherits from Dog() class)
-	class RussellTerrier(Dog):
-	    def run(self, speed):
-		return "{} runs {}".format(self.name, speed)
-
-	\# Child class (inherits from Dog() class)
-	class Bulldog(Dog):
-	    def run(self, speed):
-		return "{} runs {}".format(self.name, speed)
-
-	\# Child classes inherit attributes and
-	\# behaviors from the parent class
-	jim \= Bulldog("Jim", 12)
-	print(jim.description())
-
-	\# Child classes have specific attributes
-	\# and behaviors as well
-	print(jim.run("slowly"))
-
-	\# Is jim an instance of Dog()?
-	print(isinstance(jim, Dog))
-
-	\# Is julie an instance of Dog()?
-	julie \= Dog("Julie", 100)
-	print(isinstance(julie, Dog))
-
-	\# Is johnny walker an instance of Bulldog()
-	johnnywalker \= RussellTerrier("Johnny Walker", 4)
-	print(isinstance(johnnywalker, Bulldog))
-
-	\# Is julie and instance of jim?
-	print(isinstance(julie, jim))
-
-Output:
-
-	\>>>
-
-	('Jim', 12)
-	Jim runs slowly
-	True
-	True
-	False
-	Traceback (most recent call last):
-	  File "dog\_isinstance.py", line 50, in <module>
-	    print(isinstance(julie, jim))
-	TypeError: isinstance() arg 2 must be a class, type, or tuple of classes and types
-
-Make sense? Both `jim` and `julie` are instances of the `Dog()` class, while `johnnywalker` is not an instance of the `Bulldog()` class. Then as a sanity check, we tested if `julie` is an instance of `jim`, which is impossible since `jim` is an `instance` of a class rather than a class itself—hence the reason for the `TypeError`.
-
-### Overriding the Functionality of a Parent Class
-
-Remember that child classes can also override attributes and behaviors from the parent class. For examples:
-
-	\>>>
-
-	\>>> class Dog:
-	...     species \= 'mammal'
-	...
-	\>>> class SomeBreed(Dog):
-	...     pass
-	...
-	\>>> class SomeOtherBreed(Dog):
-	...     species \= 'reptile'
-	...
-	\>>> frank \= SomeBreed()
-	\>>> frank.species
-	'mammal'
-	\>>> beans \= SomeOtherBreed()
-	\>>> beans.species
-	'reptile'
-
-The `SomeBreed()` class inherits the `species` from the parent class, while the `SomeOtherBreed()` class overrides the `species`, setting it to `reptile`.
-
-    dogs \= \[\]
-
-    def \_\_init\_\_(self, dogs):
-        self.dogs \= dogs
-
-\# Parent class
-class Dog:
-
-    \# Class attribute
-    species \= 'mammal'
-
-    \# Initializer / Instance attributes
-    def \_\_init\_\_(self, name, age):
-        self.name \= name
-        self.age \= age
-
-    \# Instance method
-    def description(self):
-        return self.name, self.age
-
-    \# Instance method
-    def speak(self, sound):
-        return "%s says %s" % (self.name, sound)
-
-    \# Instance method
-    def eat(self):
-        self.is\_hungry \= False
-
-\# Child class (inherits from Dog class)
-class RussellTerrier(Dog):
-    def run(self, speed):
-        return "%s runs %s" % (self.name, speed)
-
-\# Child class (inherits from Dog class)
-class Bulldog(Dog):
-    def run(self, speed):
-        return "%s runs %s" % (self.name, speed)
-
-\# Create instances of dogs
-my\_dogs \= \[
-    Bulldog("Tom", 6), 
-    RussellTerrier("Fletcher", 7), 
-    Dog("Larry", 9)
-\]
-
-\# Instantiate the Pets class
-my\_pets \= Pets(my\_dogs)
-
-\# Output
-print("I have {} dogs.".format(len(my\_pets.dogs)))
-for dog in my\_pets.dogs:
-    print("{} is {}.".format(dog.name, dog.age))
-
-print("And they're all {}s, of course.".format(dog.species))
-
-
-\# Parent class
-	class Pets:
-
-	    dogs \= \[\]
-
-	    def \_\_init\_\_(self, dogs):
-		self.dogs \= dogs
-
-	    def walk(self):
-		for dog in self.dogs:
-		    print(dog.walk())
-
-\# Parent class
-	class Dog:
-
-	    \# Class attribute
-	    species \= 'mammal'
-	    is\_hungry \= True
-
-	    \# Initializer / instance attributes
-	    def \_\_init\_\_(self, name, age):
-		self.name \= name
-		self.age \= age
-
-	    \# Instance method
-	    def description(self):
-		return self.name, self.age
-
-	    \# Instance method
-	    def speak(self, sound):
-		return "%s says %s" % (self.name, sound)
-
-	    \# Instance method
-	    def eat(self):
-		self.is\_hungry \= False
-
-	    def walk(self):
-		return "%s is walking!" % (self.name)
-
-	\# Child class (inherits from Dog class)
-	class RussellTerrier(Dog):
-	    def run(self, speed):
-		return "%s runs %s" % (self.name, speed)
-
-	\# Child class (inherits from Dog class)
-	class Bulldog(Dog):
-	    def run(self, speed):
-		return "%s runs %s" % (self.name, speed)
-
-	\# Create instances of dogs
-	my\_dogs \= \[
-	    Bulldog("Tom", 6), 
-	    RussellTerrier("Fletcher", 7), 
-	    Dog("Larry", 9)
-	\]
-
-	\# Instantiate the Pet class
-	my\_pets \= Pets(my\_dogs)
-
-	\# Output
-	my\_pets.walk()
-
-
+<hr>
+<a href="../../../module/7/file-handling-advanced" style="float:left;"> &laquo; Prev </a>
+<a href="../inheritance" style="float:right;"> Next &raquo; </a>
 
