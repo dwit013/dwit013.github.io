@@ -72,6 +72,6 @@ layout: page
     Module 8 - Object Oriented Programming
     <ul type='none'>
         <li> 8.1 <a href="../module/8/class-and-object"> Class and Object </a></li>
-        <li> 8.2 <a href="../module/8/inheritance"> Class and Object </a></li>
+        <li> 8.2 <a href="../module/8/inheritance"> Inheritance </a></li>
     </ul>
 </li>
