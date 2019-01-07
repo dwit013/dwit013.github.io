@@ -110,6 +110,11 @@ A short usage example:
 		csv_writer.writerow(['Jane Doe', '2020', '623'])
 		csv_writer.writerow(['Adam Smith', '2021', '712'])
 
+## Further Reading
+
+* [csv — CSV File Reading and Writing](https://docs.python.org/3/library/csv.html)
+* [Reading and Writing CSV Files in Python](https://realpython.com/python-csv/)
+
 <hr>
 <a href="../file-handling-basic" style="float:left;"> &laquo; Prev </a>
 <a href="../../../module/8/class-and-object" style="float:right;"> Next &raquo; </a>
