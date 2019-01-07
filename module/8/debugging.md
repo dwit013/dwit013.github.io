@@ -219,61 +219,61 @@ Using the logging Module
 
 To enable the `logging` module to display log messages on your screen as your program runs, copy the following to the top of your program (but under the `#! python` shebang line):
 
-import logging
-logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s
-- %(message)s')
+	import logging
+	logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s
+	- %(message)s')
 
 You don’t need to worry too much about how this works, but basically, when Python logs an event, it creates a `LogRecord` object that holds information about that event. The `logging` module’s `basicConfig()` function lets you specify what details about the `LogRecord` object you want to see and how you want those details displayed.
 
 Say you wrote a function to calculate the _factorial_ of a number. In mathematics, factorial 4 is 1 × 2 × 3 × 4, or 24. Factorial 7 is 1 × 2 × 3 × 4 × 5 × 6 × 7, or 5,040. Open a new file editor window and enter the following code. It has a bug in it, but you will also enter several log messages to help yourself figure out what is going wrong. Save the program as _factorialLog.py_.
 
-import logging
-logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s
-- %(message)s')
-logging.debug('Start of program')
+	import logging
+	logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s
+	- %(message)s')
+	logging.debug('Start of program')
 
-def factorial(n):
-    logging.debug('Start of factorial(%s)' % (n))
-    total = 1
-    for i in range(n + 1):
-        total \*= i
-        logging.debug('i is ' + str(i) + ', total is ' + str(total))
-    logging.debug('End of factorial(%s)' % (n))
-    return total
+	def factorial(n):
+	    logging.debug('Start of factorial(%s)' % (n))
+	    total = 1
+	    for i in range(n + 1):
+		total \*= i
+		logging.debug('i is ' + str(i) + ', total is ' + str(total))
+	    logging.debug('End of factorial(%s)' % (n))
+	    return total
 
-print(factorial(5))
-logging.debug('End of program')
+	print(factorial(5))
+	logging.debug('End of program')
 
 Here, we use the `logging.debug()` function when we want to print log information. This `debug()` function will call `basicConfig()`, and a line of information will be printed. This information will be in the format we specified in `basicConfig()` and will include the messages we passed to `debug()`. The `print(factorial(5))` call is part of the original program, so the result is displayed even if logging messages are disabled.
 
-The output of this program looks like this:
+	The output of this program looks like this:
 
-2015-05-23 16:20:12,664 - DEBUG - Start of program
-2015-05-23 16:20:12,664 - DEBUG - Start of factorial(5)
-2015-05-23 16:20:12,665 - DEBUG - i is 0, total is 0
-2015-05-23 16:20:12,668 - DEBUG - i is 1, total is 0
-2015-05-23 16:20:12,670 - DEBUG - i is 2, total is 0
-2015-05-23 16:20:12,673 - DEBUG - i is 3, total is 0
-2015-05-23 16:20:12,675 - DEBUG - i is 4, total is 0
-2015-05-23 16:20:12,678 - DEBUG - i is 5, total is 0
-2015-05-23 16:20:12,680 - DEBUG - End of factorial(5)
-0
-2015-05-23 16:20:12,684 - DEBUG - End of program
+	2015-05-23 16:20:12,664 - DEBUG - Start of program
+	2015-05-23 16:20:12,664 - DEBUG - Start of factorial(5)
+	2015-05-23 16:20:12,665 - DEBUG - i is 0, total is 0
+	2015-05-23 16:20:12,668 - DEBUG - i is 1, total is 0
+	2015-05-23 16:20:12,670 - DEBUG - i is 2, total is 0
+	2015-05-23 16:20:12,673 - DEBUG - i is 3, total is 0
+	2015-05-23 16:20:12,675 - DEBUG - i is 4, total is 0
+	2015-05-23 16:20:12,678 - DEBUG - i is 5, total is 0
+	2015-05-23 16:20:12,680 - DEBUG - End of factorial(5)
+	0
+	2015-05-23 16:20:12,684 - DEBUG - End of program
 
 The `factorial()` function is returning `0` as the factorial of `5`, which isn’t right. The `for` loop should be multiplying the value in `total` by the numbers from `1` to `5`. But the log messages displayed by `logging.debug()` show that the `i` variable is starting at `0` instead of `1`. Since zero times anything is zero, the rest of the iterations also have the wrong value for `total`. Logging messages provide a trail of breadcrumbs that can help you figure out when things started to go wrong.
 
 Change the `for i in range(n + 1):` line to `for i in range(`**`1,`** `n + 1):`, and run the program again. The output will look like this:
 
-2015-05-23 17:13:40,650 - DEBUG - Start of program
-2015-05-23 17:13:40,651 - DEBUG - Start of factorial(5)
-2015-05-23 17:13:40,651 - DEBUG - i is 1, total is 1
-2015-05-23 17:13:40,654 - DEBUG - i is 2, total is 2
-2015-05-23 17:13:40,656 - DEBUG - i is 3, total is 6
-2015-05-23 17:13:40,659 - DEBUG - i is 4, total is 24
-2015-05-23 17:13:40,661 - DEBUG - i is 5, total is 120
-2015-05-23 17:13:40,661 - DEBUG - End of factorial(5)
-120
-2015-05-23 17:13:40,666 - DEBUG - End of program
+	2015-05-23 17:13:40,650 - DEBUG - Start of program
+	2015-05-23 17:13:40,651 - DEBUG - Start of factorial(5)
+	2015-05-23 17:13:40,651 - DEBUG - i is 1, total is 1
+	2015-05-23 17:13:40,654 - DEBUG - i is 2, total is 2
+	2015-05-23 17:13:40,656 - DEBUG - i is 3, total is 6
+	2015-05-23 17:13:40,659 - DEBUG - i is 4, total is 24
+	2015-05-23 17:13:40,661 - DEBUG - i is 5, total is 120
+	2015-05-23 17:13:40,661 - DEBUG - End of factorial(5)
+	120
+	2015-05-23 17:13:40,666 - DEBUG - End of program
 
 The `factorial(5)` call correctly returns `120`. The log messages showed what was going on inside the loop, which led straight to the bug.
 
@@ -303,49 +303,49 @@ Description
 
 DEBUG
 
-`logging.debug()`
+	`logging.debug()`
 
-The lowest level. Used for small details. Usually you care about these messages only when diagnosing problems.
+	The lowest level. Used for small details. Usually you care about these messages only when diagnosing problems.
 
 INFO
 
-`logging.info()`
+	`logging.info()`
 
-Used to record information on general events in your program or confirm that things are working at their point in the program.
+	Used to record information on general events in your program or confirm that things are working at their point in the program.
 
-WARNING
+	WARNING
 
-`logging.warning()`
+	`logging.warning()`
 
-Used to indicate a potential problem that doesn’t prevent the program from working but might do so in the future.
+	Used to indicate a potential problem that doesn’t prevent the program from working but might do so in the future.
 
 ERROR
 
-`logging.error()`
+	`logging.error()`
 
-Used to record an error that caused the program to fail to do something.
+	Used to record an error that caused the program to fail to do something.
 
 CRITICAL
 
-`logging.critical()`
+	`logging.critical()`
 
-The highest level. Used to indicate a fatal error that has caused or is about to cause the program to stop running entirely.
+	The highest level. Used to indicate a fatal error that has caused or is about to cause the program to stop running entirely.
 
 Your logging message is passed as a string to these functions. The logging levels are suggestions. Ultimately, it is up to you to decide which category your log message falls into. Enter the following into the interactive shell:
 
-\>>> **import logging**
->>> **logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s -**
-**%(levelname)s - %(message)s')**
->>> **logging.debug('Some debugging details.')**
-2015-05-18 19:04:26,901 - DEBUG - Some debugging details.
->>> **logging.info('The logging module is working.')**
-2015-05-18 19:04:35,569 - INFO - The logging module is working.
->>> **logging.warning('An error message is about to be logged.')**
-2015-05-18 19:04:56,843 - WARNING - An error message is about to be logged.
->>> **logging.error('An error has occurred.')**
-2015-05-18 19:05:07,737 - ERROR - An error has occurred.
->>> **logging.critical('The program is unable to recover!')**
-2015-05-18 19:05:45,794 - CRITICAL - The program is unable to recover!
+	\>>> **import logging**
+	>>> **logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s -**
+	**%(levelname)s - %(message)s')**
+	>>> **logging.debug('Some debugging details.')**
+	2015-05-18 19:04:26,901 - DEBUG - Some debugging details.
+	>>> **logging.info('The logging module is working.')**
+	2015-05-18 19:04:35,569 - INFO - The logging module is working.
+	>>> **logging.warning('An error message is about to be logged.')**
+	2015-05-18 19:04:56,843 - WARNING - An error message is about to be logged.
+	>>> **logging.error('An error has occurred.')**
+	2015-05-18 19:05:07,737 - ERROR - An error has occurred.
+	>>> **logging.critical('The program is unable to recover!')**
+	2015-05-18 19:05:45,794 - CRITICAL - The program is unable to recover!
 
 The benefit of logging levels is that you can change what priority of logging message you want to see. Passing `logging.DEBUG` to the `basicConfig()` function’s `level` keyword argument will show messages from all the logging levels (DEBUG being the lowest level). But after developing your program some more, you may be interested only in errors. In that case, you can set `basicConfig()`’s `level` argument to `logging.ERROR`. This will show only ERROR and CRITICAL messages and skip the DEBUG, INFO, and WARNING messages.
 
@@ -354,14 +354,14 @@ Disabling Logging
 
 After you’ve debugged your program, you probably don’t want all these log messages cluttering the screen. The `logging.disable()` function disables these so that you don’t have to go into your program and remove all the logging calls by hand. You simply pass `logging.disable()` a logging level, and it will suppress all log messages at that level or lower. So if you want to disable logging entirely, just add `logging.disable(logging.CRITICAL)` to your program. For example, enter the following into the interactive shell:
 
-\>>> **import logging**
->>> **logging.basicConfig(level=logging.INFO, format=' %(asctime)s -**
-**%(levelname)s - %(message)s')**
->>> **logging.critical('Critical error! Critical error!')**
-2015-05-22 11:10:48,054 - CRITICAL - Critical error! Critical error!
->>> **logging.disable(logging.CRITICAL)**
->>> **logging.critical('Critical error! Critical error!')**
->>> **logging.error('Error! Error!')**
+	\>>> **import logging**
+	>>> **logging.basicConfig(level=logging.INFO, format=' %(asctime)s -**
+	**%(levelname)s - %(message)s')**
+	>>> **logging.critical('Critical error! Critical error!')**
+	2015-05-22 11:10:48,054 - CRITICAL - Critical error! Critical error!
+	>>> **logging.disable(logging.CRITICAL)**
+	>>> **logging.critical('Critical error! Critical error!')**
+	>>> **logging.error('Error! Error!')**
 
 Since `logging.disable()` will disable all messages after it, you will probably want to add it near the `import logging` line of code in your program. This way, you can easily find it to comment out or uncomment that call to enable or disable logging messages as needed.
 
@@ -370,9 +370,9 @@ Logging to a File
 
 Instead of displaying the log messages to the screen, you can write them to a text file. The `logging.basicConfig()` function takes a `filename` keyword argument, like so:
 
-import logging
-logging.basicConfig(**filename='myProgramLog.txt'**, level=logging.DEBUG, format='
-%(asctime)s - %(levelname)s - %(message)s')
+	import logging
+	logging.basicConfig(**filename='myProgramLog.txt'**, level=logging.DEBUG, format='
+	%(asctime)s - %(levelname)s - %(message)s')
 
 The log messages will be saved to _myProgramLog.txt_. While logging messages are helpful, they can clutter your screen and make it hard to read the program’s output. Writing the logging messages to a file will keep your screen clear and store the messages so you can read them after running the program. You can open this text file in any text editor, such as Notepad or TextEdit.
 
