@@ -75,3 +75,12 @@ layout: page
         <li> 8.2 <a href="../module/8/inheritance"> Inheritance </a></li>
     </ul>
 </li>
+
+<li>
+    Module 9 - Debugging
+    <ul type='none'>
+        <li> 9.1 <a href="../module/9/exceptions"> Exceptions </a></li>
+        <li> 9.2 <a href="../module/9/assertion"> Assertion </a></li>
+        <li> 9.3 <a href="../module/9/logging"> Logging </a></li>
+    </ul>
+</li>
