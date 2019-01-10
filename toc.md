@@ -89,7 +89,7 @@ layout: page
 <li>
     Module 10 - Database
     <ul type='none'>
-        <li> 10.1 <a href="../module/10/sqlite3"> Exceptions </a></li>
-        <li> 10.2 <a href="../module/10/sqlite3-parameterized"> Assertion </a></li>
+        <li> 10.1 <a href="../module/10/sqlite3"> SQLite3 </a></li>
+        <li> 10.2 <a href="../module/10/sqlite3-parameterized"> SQLite Parameterized </a></li>
     </ul>
 </li>
