@@ -84,3 +84,12 @@ layout: page
         <li> 9.3 <a href="../module/9/logging"> Logging </a></li>
     </ul>
 </li>
+
+
+<li>
+    Module 10 - Database
+    <ul type='none'>
+        <li> 10.1 <a href="../module/10/sqlite3"> Exceptions </a></li>
+        <li> 10.2 <a href="../module/10/sqlite3-parameterized"> Assertion </a></li>
+    </ul>
+</li>
