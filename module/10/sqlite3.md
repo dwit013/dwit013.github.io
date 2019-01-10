@@ -128,9 +128,9 @@ c.execute("""INSERT INTO student VALUES (
 We can fetch and display records from a table by running the following program. Comment the `c.execute()` function in the above example and add the following.
 
 ```python
-c = conn.execute("""SELECT id, first_name, last_name, batch from student""")
+result = c.execute("""SELECT id, first_name, last_name, batch from student""")
 
-for row in c:
+for row in result:
    print ("ID = ", row[0])
    print ("NAME = {} {}".format(row[1], row[2]))
    print ("BATCH = ", row[3], "\n")
@@ -149,9 +149,9 @@ conn.commit()
 
 print ("Total number of rows updated :", conn.total_changes)
 
-c = conn.execute("""SELECT id, first_name, last_name, batch from student""")
+result = c.execute("""SELECT id, first_name, last_name, batch from student""")
 
-for row in c:
+for row in result:
    print ("ID = ", row[0])
    print ("NAME = {} {}".format(row[1], row[2]))
    print ("BATCH = ", row[3], "\n")
@@ -170,9 +170,9 @@ conn.commit()
 
 print ("Total number of rows updated :", conn.total_changes)
 
-c = conn.execute("""SELECT id, first_name, last_name, batch from student""")
+result = c.execute("""SELECT id, first_name, last_name, batch from student""")
 
-for row in c:
+for row in result:
    print ("ID = ", row[0])
    print ("NAME = {} {}".format(row[1], row[2]))
    print ("BATCH = ", row[3], "\n")
