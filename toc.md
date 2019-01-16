@@ -93,3 +93,10 @@ layout: page
         <li> 10.2 <a href="../module/10/sqlite3-parameterized"> SQLite Parameterized </a></li>
     </ul>
 </li>
+
+<li>
+    Module 11 - Web Scraping
+    <ul type='none'>
+        <li> 11.1 <a href="../module/11/web-scraping"> Web Scraping </a></li>
+    </ul>
+</li>

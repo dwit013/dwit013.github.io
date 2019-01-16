@@ -65,4 +65,4 @@ c.execute("""INSERT INTO student VALUES
 
 <hr>
 <a href="../sqlite3" style="float:left;"> &laquo; Prev </a>
-<a href="../sqlite3-parameterized" style="float:right;"> Next &raquo; </a>
+<a href="../../../module/11/web-scraping" style="float:right;"> Next &raquo; </a>
