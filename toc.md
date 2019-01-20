@@ -104,6 +104,6 @@ layout: page
 <li>
     Module 12 - Flask
     <ul type='none'>
-        <li> 12.1 <a href="../module/12/flask"> Web Scraping </a></li>
+        <li> 12.1 <a href="../module/12/flask"> Flask </a></li>
     </ul>
 </li>
