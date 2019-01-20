@@ -26,6 +26,12 @@ We can view the HTML structure in Google Chrome using Google's Developer tools (
 * BeautifulSoup4 for handling HTML processing
 * re for string matching
 
+```bash
+$ pip install requests
+$ pip install beautifulsoup4
+$ pip install re
+```
+
 Now, create a new file named `scrapper.py` and import the following code.
 
 ```python
