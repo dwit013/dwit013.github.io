@@ -100,3 +100,10 @@ layout: page
         <li> 11.1 <a href="../module/11/web-scraping"> Web Scraping </a></li>
     </ul>
 </li>
+
+<li>
+    Module 12 - Flask
+    <ul type='none'>
+        <li> 12.1 <a href="../module/12/flask"> Web Scraping </a></li>
+    </ul>
+</li>
