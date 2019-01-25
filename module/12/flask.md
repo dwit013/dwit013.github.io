@@ -32,7 +32,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Hello World!"User
+    return "Hello World!"
 ```
 
 Now run the `app.py` file from the terminal using `python3 -m flask run` (For macOS/Linux) or `python -m flask run` (For Windows).
@@ -235,7 +235,7 @@ def login():
     return render_template('login.html')
 
 @app.route('/auth', methods=['POST'])
-def login():
+def auth():
     username = request.form['username']
     password = request.form['password']
 
